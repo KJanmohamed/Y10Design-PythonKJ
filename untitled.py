@@ -1,6 +1,6 @@
-                                   #*********************** MACKINNON ***********************
+                                    #*********************** WHEELER ***********************
 
-    elif ItemChosen == 5:
+    elif ItemChosen == 16:
 
                                     #*********************** OPTIONS ***********************
 
@@ -30,82 +30,78 @@
 
         print (" Enter 12 for Height and Weight. \n")
 
-        print (" Enter 13 for Position, Shoots/Catches, Team. HI \n")
+        print (" Enter 13 for Position, Shoots/Catches, Team. \n")
 
         StatChosen = int(input("Please make your selection. \n"))
 
         if StatChosen == 1:
-            NMGPdata = datajson ['data'][57]['gamesPlayed']
-            print ("\n Nathan MacKinnon had " + str(NMGPdata) + " Games Played in 2017-2018. \n")
+            BWGPdata = datajson ['data'][8]['gamesPlayed']
+            print ("\n Blake Wheeler had " + str(BWGPdata) + " Games Played in 2017-2018. \n")
 
         elif StatChosen == 2:
-            NMGdata = datajson ['data'][57]['goals']
-            NMAdata = datajson ['data'][57]['assists']
-            NMPdata = datajson ['data'][57]['points']
-            NMPPGdata = datajson ['data'][57]['pointsPerGame']
-            print ("\n Nathan MacKinnon had " + str(NMGdata) + " Goals, " + str(NMAdata) + " Assists, " + str(NMPdata) + " Points and " + str(NMPPGdata)+ " Points Per Game in 2017-2018. \n")
+            BWGdata = datajson ['data'][8]['goals']
+            BWAdata = datajson ['data'][8]['assists']
+            BWPdata = datajson ['data'][8]['points']
+            BWPPGdata = datajson ['data'][8]['pointsPerGame']
+            print ("\n Blake Wheeler had " + str(BWGdata) + " Goals, " + str(BWAdata) + " Assists, " + str(BWPdata) + " Points and " + str(BWPPGdata)+ " Points Per Game in 2017-2018. \n")
 
         elif StatChosen == 3:
-            NMGWGdata = datajson ['data'][57]['gameWinningGoals']
-            print ("\n Nathan MacKinnon had " + str(NMGWGdata) + " Game Winning Goals in 2017-2018. \n")
+            BWGWGdata = datajson ['data'][8]['gameWinningGoals']
+            print ("\n Blake Wheeler had " + str(BWGWGdata) + " Game Winning Goals in 2017-2018. \n")
 
         elif StatChosen == 4:
-            NMPlusMdata = datajson ['data'][57]['plusMinus']
-            print ("\n Nathan MacKinnon had a " + str(NMPlusMdata) + " Plus/Minus in 2017-2018. \n")        
+            BWPlusMdata = datajson ['data'][8]['plusMinus']
+            print ("\n Blake Wheeler had a " + str(BWPlusMdata) + " Plus/Minus in 2017-2018. \n")        
         
         elif StatChosen == 5:
-            NMPMdata = datajson ['data'][57]['penaltyMinutes']
-            print ("\n Nathan MacKinnon had a " + str(NMPMdata) + " Penalty Minutes in 2017-2018. \n") 
+            BWPMdata = datajson ['data'][8]['penaltyMinutes']
+            print ("\n Blake Wheeler had a " + str(BWPMdata) + " Penalty Minutes in 2017-2018. \n") 
 
         elif StatChosen == 6:
-            NMPowerPGdata = datajson ['data'][57]['ppGoals']
-            NMPPPdata = datajson ['data'][57]['ppPoints']
-            print ("\n Nathan MacKinnon had " + str(NMPowerPGdata) + " Power Play Goals and " + str(NMPPPdata) + " Power Play Points in 2017-2018. \n")     
+            BWPowerPGdata = datajson ['data'][8]['ppGoals']
+            BWPPPdata = datajson ['data'][8]['ppPoints']
+            print ("\n Blake Wheeler had " + str(BWPowerPGdata) + " Power Play Goals and " + str(BWPPPdata) + " Power Play Points in 2017-2018. \n")     
 
         elif StatChosen == 7:
-            NMSGdata = datajson ['data'][57]['shGoals']
-            NMSPdata = datajson ['data'][57]['shPoints']
-            print ("\n Nathan MacKinnon had " + str(NMSGdata) + " Shorthanded Goals and " + str(NMSPdata) + " Shorthanded Points in 2017-2018. \n")
+            BWSGdata = datajson ['data'][8]['shGoals']
+            BWSPdata = datajson ['data'][8]['shPoints']
+            print ("\n Blake Wheeler had " + str(BWSGdata) + " Shorthanded Goals and " + str(BWSPdata) + " Shorthanded Points in 2017-2018. \n")
 
         elif StatChosen == 8:
-            NMFcePcgdata = datajson ['data'][57]['faceoffWinPctg']
-            NMSdata = datajson ['data'][57]['shots']
-            NMShtPcgdata = datajson ['data'][57]['shootingPctg']
-            print ("\n Nathan MacKinnon had a " + str(NMFcePcgdata) + " Faceoff Percentage, " + str(NMSdata) + " Shots and a " + str(NMShtPcgdata) + " Shooting Percentage in 2017-2018. \n")
+            BWFcePcgdata = datajson ['data'][8]['faceoffWinPctg']
+            BWSdata = datajson ['data'][8]['shots']
+            BWShtPcgdata = datajson ['data'][8]['shootingPctg']
+            print ("\n Blake Wheeler had a " + str(BWFcePcgdata) + " Faceoff Percentage, " + str(BWSdata) + " Shots and a " + str(BWShtPcgdata) + " Shooting Percentage in 2017-2018. \n")
 
         elif StatChosen == 9:
-            NMSPGdata = datajson ['data'][57]['shiftsPerGame']
-            NMTIPGdata = datajson ['data'][57]['timeOnIcePerGame']
-            print ("\n Nathan MacKinnon had " + str(NMSPGdata) + " Shifts Per Game and " + str(NMTIPGdata) + " seconds on the ice per game in 2017-2018. \n")
+            BWSPGdata = datajson ['data'][8]['shiftsPerGame']
+            BWTIPGdata = datajson ['data'][8]['timeOnIcePerGame']
+            print ("\n Blake Wheeler had " + str(BWSPGdata) + " Shifts Per Game and " + str(BWTIPGdata) + " seconds on the ice per game in 2017-2018. \n")
 
         elif StatChosen == 10:
-            NMBDdata = datajson ['data'][57]['playerBirthDate']
-            NMBCitydata = datajson ['data'][57]['playerBirthCity']
-            NMBPdata = datajson ['data'][57]['playerBirthStateProvince']
-            NMBCdata = datajson ['data'][57]['playerBirthCountry']
-            NMNdata = datajson ['data'][57]['playerNationality']
-            print ("\n Nathan MacKinnon was born on " + str(NMBDdata) + " in the city of " + str(NMBCitydata) + ", " + str(NMBPdata) + ", " + str(NMBCdata) + ". His nationality is " + str(NMNdata) + ". \n")
+            BWBDdata = datajson ['data'][8]['playerBirthDate']
+            BWBCitydata = datajson ['data'][8]['playerBirthCity']
+            BWBPdata = datajson ['data'][8]['playerBirthStateProvince']
+            BWBCdata = datajson ['data'][8]['playerBirthCountry']
+            BWNdata = datajson ['data'][8]['playerNationality']
+            print ("\n Blake Wheeler was born on " + str(BWBDdata) + " in the city of " + str(BWBCitydata) + ", " + str(BWBPdata) + ", " + str(BWBCdata) + ". His nationality is " + str(BWNdata) + ". \n")
 
         elif StatChosen == 11:
-            NMDOPNdata = datajson ['data'][57]['playerDraftOverallPickNo']
-            NMRNdata = datajson ['data'][57]['playerDraftRoundNo']
-            NMDYdata = datajson ['data'][57]['playerDraftYear']
-            print ("\n Nathan MacKinnon was drafted #" + str(NMDOPNdata) + " overall, in the #" + str(NMRNdata) + " round, in year " + str(NMDYdata) + ". \n") 
+            BWDOPNdata = datajson ['data'][8]['playerDraftOverallPickNo']
+            BWRNdata = datajson ['data'][8]['playerDraftRoundNo']
+            BWDYdata = datajson ['data'][8]['playerDraftYear']
+            print ("\n Blake Wheeler was drafted #" + str(BWDOPNdata) + " overall, in the #" + str(BWRNdata) + " round, in year " + str(BWDYdata) + ". \n") 
 
         elif StatChosen == 12:
-            NMHdata = datajson ['data'][57]['playerHeight']
-            NMWdata = datajson ['data'][57]['playerWeight']
-            print ("\n Nathan MacKinnon is " + str(NMHdata) + " inches tall and weighs " + str(NMWdata) + " pounds. \n")
+            BWHdata = datajson ['data'][8]['playerHeight']
+            BWWdata = datajson ['data'][8]['playerWeight']
+            print ("\n Blake Wheeler is " + str(BWHdata) + " inches tall and weighs " + str(BWWdata) + " pounds. \n")
 
         elif StatChosen == 13:
-            NMPosdata = datajson ['data'][57]['playerPositionCode']
-            NMSdata = datajson ['data'][57]['playerShootsCatches']
-            NMTdata = datajson ['data'][57]['playerTeamsPlayedFor']
-            print ("\n Nathan MacKinnon plays " + str(NMPosdata) + "enter, Shoots " + str(NMSdata) + "ight, and played for " + str(NMTdata) + " in 2017-2018. \n")
+            BWPosdata = datajson ['data'][8]['playerPositionCode']
+            BWSdata = datajson ['data'][8]['playerShootsCatches']
+            BWTdata = datajson ['data'][8]['playerTeamsPlayedFor']
+            print ("\n Blake Wheeler plays " + str(BWPosdata) + "enter, Shoots " + str(BWSdata) + "eft, and played for " + str(BWTdata) + " in 2017-2018. \n")
 
-
-
-
-
-
-
+        else:
+            print("ERROR PLEASE TRY AGAIN")
