@@ -1,28 +1,12 @@
-'''
-myapi.py 
-- simple program to demo using a web API with requests Python module
-- secondary function to demo how to Enter out received data to an HTML file 
-'''
+# Author: Kalen Janmohamed
+# For: Mr. Jugoon
+# Date: October 25 2019
 
 import requests
 import json
 import pprint
 
-# Find APIs at - https://apilist.fun/
-# some will require an API key, boo hiss!
-
-# cool geo example
-# https://geo-info.co/?ref=apilist.fun
-# example - https://geo-info.co/43.65,-79.40
-
-# cool funny example
-# https://funtranslations.com/api/chef
-# https://api.funtranslations.com/translate/chef.json?text=I%20like%20upper%20canada%20college
-
-# For any indentation errors, make sure there are no tabs (\t) by doing 
-# a full replace of \t with 4 actual spaces
-
-#                                           *   MENU SYSTEM *
+#                                           *--------------  MENU SYSTEM -----------------*
 print ("Hello! Welcome to THE NHL STATS OUTPUT MACHINE! \n ")
 print ("Here is the selection that you can choose from. \n ")
 
@@ -42,8 +26,18 @@ print (" Enter 13 for Taylor Hall. \n")
 print (" Enter 14 for Anze Kopitar. \n")
 print (" Enter 15 for Phil Kessel. \n")
 print (" Enter 16 for Blake Wheeler. \n")
+print (" Enter 17 for Steven Stamkos. \n")
+print (" Enter 18 for Brad Marchand. \n")
+print (" Enter 19 for Matthew Barzal. \n")
+print (" Enter 20 for Jakub Vorácek. \n")
+
+#                                           *--------------  ITEM CHOSEN VARIABLE -----------------*
+
 ItemChosen = int(input("Please make your selection - if not a valid answer the program will not continue. \n"))
 
+
+
+#                                           *--------------  HTML FILE -----------------*
 def writeHTML(data):
     myfile = open("myapi.html","w")
     myfile.write("<h1> 2017-2018 NHL SEASON STATS </h1>")
@@ -53,7 +47,7 @@ def writeHTML(data):
 
 def main():
 
-    # Call to Database
+#                                           *--------------  CALL TO API -----------------*
 
     response = requests.get("http://www.nhl.com/stats/rest/skaters?isAggregate=false&reportType=basic&isGame=false&reportName=skatersummary&sort=[{%22property%22:%22points%22,%22direction%22:%22DESC%22},{%22property%22:%22goals%22,%22direction%22:%22DESC%22},{%22property%22:%22assists%22,%22direction%22:%22DESC%22}]&cayenneExp=gameTypeId=2%20and%20seasonId%3E=20172018%20and%20seasonId%3C=20172018")
 
@@ -63,23 +57,6 @@ def main():
     #writeHTML(data_as_str)  # call function to write string data to HTML file
 
     datajson = response.json()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
                                     #*********************** MCDAVID ***********************
@@ -116,12 +93,16 @@ def main():
 
         print (" Enter 13 for Position, Shoots/Catches, Team. \n")
 
+#                                           *--------------  STAT CHOSEN VARIABLE -----------------*
+
         StatChosen = int(input("Please make your selection - if not a valid answer the program will not continue. \n"))
 
+#                                           *--------------  GAMES PLAYED -----------------*
         if StatChosen == 1:
             CMGPdata = datajson ['data'][0]['gamesPlayed']
             print ("\n Connor McDavid had " + str(CMGPdata) + " Games Played in 2017-2018. \n")
 
+#                                           *--------------  GOALS, ASSISTS, POINTS, POINTS PER GAME -----------------*
         elif StatChosen == 2:
             CMGdata = datajson ['data'][0]['goals']
             CMAdata = datajson ['data'][0]['assists']
@@ -129,39 +110,47 @@ def main():
             CMPPGdata = datajson ['data'][0]['pointsPerGame']
             print ("\n Connor McDavid had " + str(CMGdata) + " Goals, " + str(CMAdata) + " Assists, " + str(CMPdata) + " Points and " + str(CMPPGdata)+ " Points Per Game in 2017-2018. \n")
 
+#                                           *--------------  GAME WINNING GOALS -----------------*
         elif StatChosen == 3:
             CMGWGdata = datajson ['data'][0]['gameWinningGoals']
             print ("\n Connor McDavid had " + str(CMGWGdata) + " Game Winning Goals in 2017-2018. \n")
 
+#                                           *--------------  PLUS/MINUS -----------------*
         elif StatChosen == 4:
             CMPlusMdata = datajson ['data'][0]['plusMinus']
             print ("\n Connor McDavid had a " + str(CMPlusMdata) + " Plus/Minus in 2017-2018. \n")        
         
+#                                           *--------------  PENLATY MINUTES -----------------*
         elif StatChosen == 5:
             CMPMdata = datajson ['data'][0]['penaltyMinutes']
             print ("\n Connor McDavid had a " + str(CMPMdata) + " Penalty Minutes in 2017-2018. \n") 
 
+#                                           *--------------  POWER PLAY POINTS -----------------*
         elif StatChosen == 6:
             CMPowerPGdata = datajson ['data'][0]['ppGoals']
             CMPPPdata = datajson ['data'][0]['ppPoints']
             print ("\n Connor McDavid had " + str(CMPowerPGdata) + " Power Play Goals and " + str(CMPPPdata) + " Power Play Points in 2017-2018. \n")     
 
+#                                           *--------------  SHORTHANDED GOALS AND POINTS -----------------*
         elif StatChosen == 7:
             CMSGdata = datajson ['data'][0]['shGoals']
             CMSPdata = datajson ['data'][0]['shPoints']
             print ("\n Connor McDavid had " + str(CMSGdata) + " Shorthanded Goals and " + str(CMSPdata) + " Shorthanded Points in 2017-2018. \n")
 
+#                                           *--------------  FACEOFF AND SHOOTING -----------------*
         elif StatChosen == 8:
             CMFcePcgdata = datajson ['data'][0]['faceoffWinPctg']
             CMSdata = datajson ['data'][0]['shots']
             CMShtPcgdata = datajson ['data'][0]['shootingPctg']
             print ("\n Connor McDavid had a " + str(CMFcePcgdata) + " Faceoff Percentage, " + str(CMSdata) + " Shots and a " + str(CMShtPcgdata) + " Shooting Percentage in 2017-2018. \n")
 
+#                                           *--------------  TIME PLAYED -----------------*
         elif StatChosen == 9:
             CMSPGdata = datajson ['data'][0]['shiftsPerGame']
             CMTIPGdata = datajson ['data'][0]['timeOnIcePerGame']
             print ("\n Connor McDavid had " + str(CMSPGdata) + " Shifts Per Game and " + str(CMTIPGdata) + " seconds on the ice per game in 2017-2018. \n")
 
+#                                           *--------------  PERSONAL INFO -----------------*
         elif StatChosen == 10:
             CMBDdata = datajson ['data'][0]['playerBirthDate']
             CMBCitydata = datajson ['data'][0]['playerBirthCity']
@@ -170,17 +159,20 @@ def main():
             CMNdata = datajson ['data'][0]['playerNationality']
             print ("\n Connor McDavid was born on " + str(CMBDdata) + " in the city of " + str(CMBCitydata) + ", " + str(CMBPdata) + ", " + str(CMBCdata) + ". His nationality is " + str(CMNdata) + ". \n")
 
+#                                           *--------------  DRAFT PICK INFO -----------------*
         elif StatChosen == 11:
             CMDOPNdata = datajson ['data'][0]['playerDraftOverallPickNo']
             CMRNdata = datajson ['data'][0]['playerDraftRoundNo']
             CMDYdata = datajson ['data'][0]['playerDraftYear']
             print ("\n Connor McDavid was drafted #" + str(CMDOPNdata) + " overall, in the #" + str(CMRNdata) + " round, in year " + str(CMDYdata) + ". \n") 
 
+#                                           *--------------  HEIGHT WEIGHT -----------------*
         elif StatChosen == 12:
             CMHdata = datajson ['data'][0]['playerHeight']
             CMWdata = datajson ['data'][0]['playerWeight']
             print ("\n Connor McDavid is " + str(CMHdata) + " inches tall and weighs " + str(CMWdata) + " pounds. \n")
 
+#                                           *--------------  SHOOTS, POSITION AND TEAM -----------------*
         elif StatChosen == 13:
             CMPosdata = datajson ['data'][0]['playerPositionCode']
             CMSdata = datajson ['data'][0]['playerShootsCatches']
@@ -2069,4 +2061,472 @@ def main():
 
 
 
+
+                                    #*********************** STAMKOS ***********************
+
+    elif ItemChosen == 17:
+
+                                    #*********************** OPTIONS ***********************
+
+        print (" Now please choose one of the following stats/personal info. \n")
+
+        print (" Enter 1 for Games Played (GP). \n")
+
+        print (" Enter 2 for Goals (G), Assists (A), Points (P) and Points Per Game (PPG). \n")
+
+        print (" Enter 3 for Game Winning Goals (GWG). \n")
+
+        print (" Enter 4 for Plus/Minus (+/-). \n")
+
+        print (" Enter 5 for Penalty Minutes (PM). \n")
+
+        print (" Enter 6 for Power Play Goals (PPG) and Power Play Points (PPP). \n")
+                        
+        print (" Enter 7 for Shorthanded Goals (SH) and Shorthanded Points (SP). \n")
+
+        print (" Enter 8 for Faceoff Percentage (Faceoff%), Shots (S) and Shooting Percentage (S%). \n")
+           
+        print (" Enter 9 for Shifts Per Game and Time on Ice Per Game. \n")
+
+        print (" Enter 10 for Birth Date, City, State/Province/Territory, Country, Nationality. \n")
+
+        print (" Enter 11 for Draft Overall Pick Number, Round Number, Draft Year. \n")
+
+        print (" Enter 12 for Height and Weight. \n")
+
+        print (" Enter 13 for Position, Shoots/Catches, Team. \n")
+
+        StatChosen = int(input("Please make your selection. \n"))
+
+        if StatChosen == 1:
+            SSGPdata = datajson ['data'][11]['gamesPlayed']
+            print ("\n Steven Stamkos had " + str(SSGPdata) + " Games Played in 2017-2018. \n")
+
+        elif StatChosen == 2:
+            SSGdata = datajson ['data'][11]['goals']
+            SSAdata = datajson ['data'][11]['assists']
+            SSPdata = datajson ['data'][11]['points']
+            SSPPGdata = datajson ['data'][11]['pointsPerGame']
+            print ("\n Steven Stamkos had " + str(SSGdata) + " Goals, " + str(SSAdata) + " Assists, " + str(SSPdata) + " Points and " + str(SSPPGdata)+ " Points Per Game in 2017-2018. \n")
+
+        elif StatChosen == 3:
+            SSGWGdata = datajson ['data'][11]['gameWinningGoals']
+            print ("\n Steven Stamkos had " + str(SSGWGdata) + " Game Winning Goals in 2017-2018. \n")
+
+        elif StatChosen == 4:
+            SSPlusMdata = datajson ['data'][11]['plusMinus']
+            print ("\n Steven Stamkos had a " + str(SSPlusMdata) + " Plus/Minus in 2017-2018. \n")        
+        
+        elif StatChosen == 5:
+            SSPMdata = datajson ['data'][11]['penaltyMinutes']
+            print ("\n Steven Stamkos had a " + str(SSPMdata) + " Penalty Minutes in 2017-2018. \n") 
+
+        elif StatChosen == 6:
+            SSPowerPGdata = datajson ['data'][11]['ppGoals']
+            SSPPPdata = datajson ['data'][11]['ppPoints']
+            print ("\n Steven Stamkos had " + str(SSPowerPGdata) + " Power Play Goals and " + str(SSPPPdata) + " Power Play Points in 2017-2018. \n")     
+
+        elif StatChosen == 7:
+            SSSGdata = datajson ['data'][11]['shGoals']
+            SSSPdata = datajson ['data'][11]['shPoints']
+            print ("\n Steven Stamkos had " + str(SSSGdata) + " Shorthanded Goals and " + str(SSSPdata) + " Shorthanded Points in 2017-2018. \n")
+
+        elif StatChosen == 8:
+            SSFcePcgdata = datajson ['data'][11]['faceoffWinPctg']
+            SSSdata = datajson ['data'][11]['shots']
+            SSShtPcgdata = datajson ['data'][11]['shootingPctg']
+            print ("\n Steven Stamkos had a " + str(SSFcePcgdata) + " Faceoff Percentage, " + str(SSSdata) + " Shots and a " + str(SSShtPcgdata) + " Shooting Percentage in 2017-2018. \n")
+
+        elif StatChosen == 9:
+            SSSPGdata = datajson ['data'][11]['shiftsPerGame']
+            SSTIPGdata = datajson ['data'][11]['timeOnIcePerGame']
+            print ("\n Steven Stamkos had " + str(SSSPGdata) + " Shifts Per Game and " + str(SSTIPGdata) + " seconds on the ice per game in 2017-2018. \n")
+
+        elif StatChosen == 10:
+            SSBDdata = datajson ['data'][11]['playerBirthDate']
+            SSBCitydata = datajson ['data'][11]['playerBirthCity']
+            SSBPdata = datajson ['data'][11]['playerBirthStateProvince']
+            SSBCdata = datajson ['data'][11]['playerBirthCountry']
+            SSNdata = datajson ['data'][11]['playerNationality']
+            print ("\n Steven Stamkos was born on " + str(SSBDdata) + " in the city of " + str(SSBCitydata) + ", " + str(SSBPdata) + ", " + str(SSBCdata) + ". His nationality is " + str(SSNdata) + ". \n")
+
+        elif StatChosen == 11:
+            SSDOPNdata = datajson ['data'][11]['playerDraftOverallPickNo']
+            SSRNdata = datajson ['data'][11]['playerDraftRoundNo']
+            SSDYdata = datajson ['data'][11]['playerDraftYear']
+            print ("\n Steven Stamkos was drafted #" + str(SSDOPNdata) + " overall, in the #" + str(SSRNdata) + " round, in year " + str(SSDYdata) + ". \n") 
+
+        elif StatChosen == 12:
+            SSHdata = datajson ['data'][11]['playerHeight']
+            SSWdata = datajson ['data'][11]['playerWeight']
+            print ("\n Steven Stamkos is " + str(SSHdata) + " inches tall and weighs " + str(SSWdata) + " pounds. \n")
+
+        elif StatChosen == 13:
+            SSPosdata = datajson ['data'][11]['playerPositionCode']
+            SSSdata = datajson ['data'][11]['playerShootsCatches']
+            SSTdata = datajson ['data'][11]['playerTeamsPlayedFor']
+            print ("\n Steven Stamkos plays " + str(SSPosdata) + "Center, Shoots " + str(SSSdata) + "ight, and played for " + str(SSTdata) + " in 2017-2018. \n")
+
+        else:
+            print("ERROR PLEASE TRY AGAIN")
+
+
+
+
+
+
+
+
+
+
+                                    
+
+                                    #*********************** MARCHAND ***********************
+    elif ItemChosen == 18:
+
+                                    #*********************** OPTIONS ***********************
+
+        print (" Now please choose one of the following stats/personal info. \n")
+
+        print (" Enter 1 for Games Played (GP). \n")
+
+        print (" Enter 2 for Goals (G), Assists (A), Points (P) and Points Per Game (PPG). \n")
+
+        print (" Enter 3 for Game Winning Goals (GWG). \n")
+
+        print (" Enter 4 for Plus/Minus (+/-). \n")
+
+        print (" Enter 5 for Penalty Minutes (PM). \n")
+
+        print (" Enter 6 for Power Play Goals (PPG) and Power Play Points (PPP). \n")
+                        
+        print (" Enter 7 for Shorthanded Goals (SH) and Shorthanded Points (SP). \n")
+
+        print (" Enter 8 for Faceoff Percentage (Faceoff%), Shots (S) and Shooting Percentage (S%). \n")
+           
+        print (" Enter 9 for Shifts Per Game and Time on Ice Per Game. \n")
+
+        print (" Enter 10 for Birth Date, City, State/Province/Territory, Country, Nationality. \n")
+
+        print (" Enter 11 for Draft Overall Pick Number, Round Number, Draft Year. \n")
+
+        print (" Enter 12 for Height and Weight. \n")
+
+        print (" Enter 13 for Position, Shoots/Catches, Team. \n")
+
+        StatChosen = int(input("Please make your selection. \n"))
+
+        if StatChosen == 1:
+            BMGPdata = datajson ['data'][12]['gamesPlayed']
+            print ("\n Brad Marchand had " + str(BMGPdata) + " Games Played in 2017-2018. \n")
+
+        elif StatChosen == 2:
+            BMGdata = datajson ['data'][12]['goals']
+            BMAdata = datajson ['data'][12]['assists']
+            BMPdata = datajson ['data'][12]['points']
+            BMPPGdata = datajson ['data'][12]['pointsPerGame']
+            print ("\n Brad Marchand had " + str(BMGdata) + " Goals, " + str(BMAdata) + " Assists, " + str(BMPdata) + " Points and " + str(BMPPGdata)+ " Points Per Game in 2017-2018. \n")
+
+        elif StatChosen == 3:
+            BMGWGdata = datajson ['data'][12]['gameWinningGoals']
+            print ("\n Brad Marchand had " + str(BMGWGdata) + " Game Winning Goals in 2017-2018. \n")
+
+        elif StatChosen == 4:
+            BMPlusMdata = datajson ['data'][12]['plusMinus']
+            print ("\n Brad Marchand had a " + str(BMPlusMdata) + " Plus/Minus in 2017-2018. \n")        
+        
+        elif StatChosen == 5:
+            BMPMdata = datajson ['data'][12]['penaltyMinutes']
+            print ("\n Brad Marchand had a " + str(BMPMdata) + " Penalty Minutes in 2017-2018. \n") 
+
+        elif StatChosen == 6:
+            BMPowerPGdata = datajson ['data'][12]['ppGoals']
+            BMPPPdata = datajson ['data'][12]['ppPoints']
+            print ("\n Brad Marchand had " + str(BMPowerPGdata) + " Power Play Goals and " + str(BMPPPdata) + " Power Play Points in 2017-2018. \n")     
+
+        elif StatChosen == 7:
+            BMSGdata = datajson ['data'][12]['shGoals']
+            BMSPdata = datajson ['data'][12]['shPoints']
+            print ("\n Brad Marchand had " + str(BMSGdata) + " Shorthanded Goals and " + str(BMSPdata) + " Shorthanded Points in 2017-2018. \n")
+
+        elif StatChosen == 8:
+            BMFcePcgdata = datajson ['data'][12]['faceoffWinPctg']
+            BMSdata = datajson ['data'][12]['shots']
+            BMShtPcgdata = datajson ['data'][12]['shootingPctg']
+            print ("\n Brad Marchand had a " + str(BMFcePcgdata) + " Faceoff Percentage, " + str(BMSdata) + " Shots and a " + str(BMShtPcgdata) + " Shooting Percentage in 2017-2018. \n")
+
+        elif StatChosen == 9:
+            BMSPGdata = datajson ['data'][12]['shiftsPerGame']
+            BMTIPGdata = datajson ['data'][12]['timeOnIcePerGame']
+            print ("\n Brad Marchand had " + str(BMSPGdata) + " Shifts Per Game and " + str(BMTIPGdata) + " seconds on the ice per game in 2017-2018. \n")
+
+        elif StatChosen == 10:
+            BMBDdata = datajson ['data'][12]['playerBirthDate']
+            BMBCitydata = datajson ['data'][12]['playerBirthCity']
+            BMBPdata = datajson ['data'][12]['playerBirthStateProvince']
+            BMBCdata = datajson ['data'][12]['playerBirthCountry']
+            BMNdata = datajson ['data'][12]['playerNationality']
+            print ("\n Brad Marchand was born on " + str(BMBDdata) + " in the city of " + str(BMBCitydata) + ", " + str(BMBPdata) + ", " + str(BMBCdata) + ". His nationality is " + str(BMNdata) + ". \n")
+
+        elif StatChosen == 11:
+            BMDOPNdata = datajson ['data'][12]['playerDraftOverallPickNo']
+            BMRNdata = datajson ['data'][12]['playerDraftRoundNo']
+            BMDYdata = datajson ['data'][12]['playerDraftYear']
+            print ("\n Brad Marchand was drafted #" + str(BMDOPNdata) + " overall, in the #" + str(BMRNdata) + " round, in year " + str(BMDYdata) + ". \n") 
+
+        elif StatChosen == 12:
+            BMHdata = datajson ['data'][12]['playerHeight']
+            BMWdata = datajson ['data'][12]['playerWeight']
+            print ("\n Brad Marchand is " + str(BMHdata) + " inches tall and weighs " + str(BMWdata) + " pounds. \n")
+
+        elif StatChosen == 13:
+            BMPosdata = datajson ['data'][12]['playerPositionCode']
+            BMSdata = datajson ['data'][12]['playerShootsCatches']
+            BMTdata = datajson ['data'][12]['playerTeamsPlayedFor']
+            print ("\n Brad Marchand plays " + str(BMPosdata) + "enter, Shoots " + str(BMSdata) + "eft, and played for " + str(BMTdata) + " in 2017-2018. \n")
+
+        else:
+            print("ERROR PLEASE TRY AGAIN")
+
+
+
+
+
+
+                                    
+
+                                    #*********************** BARZAL ***********************
+    elif ItemChosen == 19:
+
+                                    #*********************** OPTIONS ***********************
+
+        print (" Now please choose one of the following stats/personal info. \n")
+
+        print (" Enter 1 for Games Played (GP). \n")
+
+        print (" Enter 2 for Goals (G), Assists (A), Points (P) and Points Per Game (PPG). \n")
+
+        print (" Enter 3 for Game Winning Goals (GWG). \n")
+
+        print (" Enter 4 for Plus/Minus (+/-). \n")
+
+        print (" Enter 5 for Penalty Minutes (PM). \n")
+
+        print (" Enter 6 for Power Play Goals (PPG) and Power Play Points (PPP). \n")
+                        
+        print (" Enter 7 for Shorthanded Goals (SH) and Shorthanded Points (SP). \n")
+
+        print (" Enter 8 for Faceoff Percentage (Faceoff%), Shots (S) and Shooting Percentage (S%). \n")
+           
+        print (" Enter 9 for Shifts Per Game and Time on Ice Per Game. \n")
+
+        print (" Enter 10 for Birth Date, City, State/Province/Territory, Country, Nationality. \n")
+
+        print (" Enter 11 for Draft Overall Pick Number, Round Number, Draft Year. \n")
+
+        print (" Enter 12 for Height and Weight. \n")
+
+        print (" Enter 13 for Position, Shoots/Catches, Team. \n")
+
+        StatChosen = int(input("Please make your selection. \n"))
+
+        if StatChosen == 1:
+            MBGPdata = datajson ['data'][13]['gamesPlayed']
+            print ("\n Matthew Barzal had " + str(MBGPdata) + " Games Played in 2017-2018. \n")
+
+        elif StatChosen == 2:
+            MBGdata = datajson ['data'][13]['goals']
+            MBAdata = datajson ['data'][13]['assists']
+            MBPdata = datajson ['data'][13]['points']
+            MBPPGdata = datajson ['data'][13]['pointsPerGame']
+            print ("\n Matthew Barzal had " + str(MBGdata) + " Goals, " + str(MBAdata) + " Assists, " + str(MBPdata) + " Points and " + str(MBPPGdata)+ " Points Per Game in 2017-2018. \n")
+
+        elif StatChosen == 3:
+            MBGWGdata = datajson ['data'][13]['gameWinningGoals']
+            print ("\n Matthew Barzal had " + str(MBGWGdata) + " Game Winning Goals in 2017-2018. \n")
+
+        elif StatChosen == 4:
+            MBPlusMdata = datajson ['data'][13]['plusMinus']
+            print ("\n Matthew Barzal had a " + str(MBPlusMdata) + " Plus/Minus in 2017-2018. \n")        
+        
+        elif StatChosen == 5:
+            MBPMdata = datajson ['data'][13]['penaltyMinutes']
+            print ("\n Matthew Barzal had a " + str(MBPMdata) + " Penalty Minutes in 2017-2018. \n") 
+
+        elif StatChosen == 6:
+            MBPowerPGdata = datajson ['data'][13]['ppGoals']
+            MBPPPdata = datajson ['data'][13]['ppPoints']
+            print ("\n Matthew Barzal had " + str(MBPowerPGdata) + " Power Play Goals and " + str(MBPPPdata) + " Power Play Points in 2017-2018. \n")     
+
+        elif StatChosen == 7:
+            MBSGdata = datajson ['data'][13]['shGoals']
+            MBSPdata = datajson ['data'][13]['shPoints']
+            print ("\n Matthew Barzal had " + str(MBSGdata) + " Shorthanded Goals and " + str(MBSPdata) + " Shorthanded Points in 2017-2018. \n")
+
+        elif StatChosen == 8:
+            MBFcePcgdata = datajson ['data'][13]['faceoffWinPctg']
+            MBSdata = datajson ['data'][13]['shots']
+            MBShtPcgdata = datajson ['data'][13]['shootingPctg']
+            print ("\n Matthew Barzal had a " + str(MBFcePcgdata) + " Faceoff Percentage, " + str(MBSdata) + " Shots and a " + str(MBShtPcgdata) + " Shooting Percentage in 2017-2018. \n")
+
+        elif StatChosen == 9:
+            MBSPGdata = datajson ['data'][13]['shiftsPerGame']
+            MBTIPGdata = datajson ['data'][13]['timeOnIcePerGame']
+            print ("\n Matthew Barzal had " + str(MBSPGdata) + " Shifts Per Game and " + str(MBTIPGdata) + " seconds on the ice per game in 2017-2018. \n")
+
+        elif StatChosen == 10:
+            MBBDdata = datajson ['data'][13]['playerBirthDate']
+            MBBCitydata = datajson ['data'][13]['playerBirthCity']
+            MBBPdata = datajson ['data'][13]['playerBirthStateProvince']
+            MBBCdata = datajson ['data'][13]['playerBirthCountry']
+            MBNdata = datajson ['data'][13]['playerNationality']
+            print ("\n Matthew Barzal was born on " + str(MBBDdata) + " in the city of " + str(MBBCitydata) + ", " + str(MBBPdata) + ", " + str(MBBCdata) + ". His nationality is " + str(MBNdata) + ". \n")
+
+        elif StatChosen == 11:
+            MBDOPNdata = datajson ['data'][13]['playerDraftOverallPickNo']
+            MBRNdata = datajson ['data'][13]['playerDraftRoundNo']
+            MBDYdata = datajson ['data'][13]['playerDraftYear']
+            print ("\n Matthew Barzal was drafted #" + str(MBDOPNdata) + " overall, in the #" + str(MBRNdata) + " round, in year " + str(MBDYdata) + ". \n") 
+
+        elif StatChosen == 12:
+            MBHdata = datajson ['data'][13]['playerHeight']
+            MBWdata = datajson ['data'][13]['playerWeight']
+            print ("\n Matthew Barzal is " + str(MBHdata) + " inches tall and weighs " + str(MBWdata) + " pounds. \n")
+
+        elif StatChosen == 13:
+            MBPosdata = datajson ['data'][13]['playerPositionCode']
+            MBSdata = datajson ['data'][13]['playerShootsCatches']
+            MBTdata = datajson ['data'][13]['playerTeamsPlayedFor']
+            print ("\n Matthew Barzal plays " + str(MBPosdata) + "enter, Shoots " + str(MBSdata) + "ight, and played for " + str(MBTdata) + " in 2017-2018. \n")
+
+        else:
+            print("ERROR PLEASE TRY AGAIN")
+
+
+
+
+
+
+
+
+
+                                    #*********************** VORÁCEK ***********************
+    elif ItemChosen == 20:
+
+                                    #*********************** OPTIONS ***********************
+
+        print (" Now please choose one of the following stats/personal info. \n")
+
+        print (" Enter 1 for Games Played (GP). \n")
+
+        print (" Enter 2 for Goals (G), Assists (A), Points (P) and Points Per Game (PPG). \n")
+
+        print (" Enter 3 for Game Winning Goals (GWG). \n")
+
+        print (" Enter 4 for Plus/Minus (+/-). \n")
+
+        print (" Enter 5 for Penalty Minutes (PM). \n")
+
+        print (" Enter 6 for Power Play Goals (PPG) and Power Play Points (PPP). \n")
+                        
+        print (" Enter 7 for Shorthanded Goals (SH) and Shorthanded Points (SP). \n")
+
+        print (" Enter 8 for Faceoff Percentage (Faceoff%), Shots (S) and Shooting Percentage (S%). \n")
+           
+        print (" Enter 9 for Shifts Per Game and Time on Ice Per Game. \n")
+
+        print (" Enter 10 for Birth Date, City, State/Province/Territory, Country, Nationality. \n")
+
+        print (" Enter 11 for Draft Overall Pick Number, Round Number, Draft Year. \n")
+
+        print (" Enter 12 for Height and Weight. \n")
+
+        print (" Enter 13 for Position, Shoots/Catches, Team. \n")
+
+        StatChosen = int(input("Please make your selection. \n"))
+
+        if StatChosen == 1:
+            JVGPdata = datajson ['data'][14]['gamesPlayed']
+            print ("\n Jakub Vorácek had " + str(JVGPdata) + " Games Played in 2017-2018. \n")
+
+        elif StatChosen == 2:
+            JVGdata = datajson ['data'][14]['goals']
+            JVAdata = datajson ['data'][14]['assists']
+            JVPdata = datajson ['data'][14]['points']
+            JVPPGdata = datajson ['data'][14]['pointsPerGame']
+            print ("\n Jakub Vorácek had " + str(JVGdata) + " Goals, " + str(JVAdata) + " Assists, " + str(JVPdata) + " Points and " + str(JVPPGdata)+ " Points Per Game in 2017-2018. \n")
+
+        elif StatChosen == 3:
+            JVGWGdata = datajson ['data'][14]['gameWinningGoals']
+            print ("\n Jakub Vorácek had " + str(JVGWGdata) + " Game Winning Goals in 2017-2018. \n")
+
+        elif StatChosen == 4:
+            JVPlusMdata = datajson ['data'][14]['plusMinus']
+            print ("\n Jakub Vorácek had a " + str(JVPlusMdata) + " Plus/Minus in 2017-2018. \n")        
+        
+        elif StatChosen == 5:
+            JVPMdata = datajson ['data'][14]['penaltyMinutes']
+            print ("\n Jakub Vorácek had a " + str(JVPMdata) + " Penalty Minutes in 2017-2018. \n") 
+
+        elif StatChosen == 6:
+            JVPowerPGdata = datajson ['data'][14]['ppGoals']
+            JVPPPdata = datajson ['data'][14]['ppPoints']
+            print ("\n Jakub Vorácek had " + str(JVPowerPGdata) + " Power Play Goals and " + str(JVPPPdata) + " Power Play Points in 2017-2018. \n")     
+
+        elif StatChosen == 7:
+            JVSGdata = datajson ['data'][14]['shGoals']
+            JVSPdata = datajson ['data'][14]['shPoints']
+            print ("\n Jakub Vorácek had " + str(JVSGdata) + " Shorthanded Goals and " + str(JVSPdata) + " Shorthanded Points in 2017-2018. \n")
+
+        elif StatChosen == 8:
+            JVFcePcgdata = datajson ['data'][14]['faceoffWinPctg']
+            JVSdata = datajson ['data'][14]['shots']
+            JVShtPcgdata = datajson ['data'][14]['shootingPctg']
+            print ("\n Jakub Vorácek had a " + str(JVFcePcgdata) + " Faceoff Percentage, " + str(JVSdata) + " Shots and a " + str(JVShtPcgdata) + " Shooting Percentage in 2017-2018. \n")
+
+        elif StatChosen == 9:
+            JVSPGdata = datajson ['data'][14]['shiftsPerGame']
+            JVTIPGdata = datajson ['data'][14]['timeOnIcePerGame']
+            print ("\n Jakub Vorácek had " + str(JVSPGdata) + " Shifts Per Game and " + str(JVTIPGdata) + " seconds on the ice per game in 2017-2018. \n")
+
+        elif StatChosen == 10:
+            JVBDdata = datajson ['data'][14]['playerBirthDate']
+            JVBCitydata = datajson ['data'][14]['playerBirthCity']
+            JVBPdata = datajson ['data'][14]['playerBirthStateProvince']
+            JVBCdata = datajson ['data'][14]['playerBirthCountry']
+            JVNdata = datajson ['data'][14]['playerNationality']
+            print ("\n Jakub Vorácek was born on " + str(JVBDdata) + " in the city of " + str(JVBCitydata) + ", " + str(JVBPdata) + ", " + str(JVBCdata) + ". His nationality is " + str(JVNdata) + ". \n")
+
+        elif StatChosen == 11:
+            JVDOPNdata = datajson ['data'][14]['playerDraftOverallPickNo']
+            JVRNdata = datajson ['data'][14]['playerDraftRoundNo']
+            JVDYdata = datajson ['data'][14]['playerDraftYear']
+            print ("\n Jakub Vorácek was drafted #" + str(JVDOPNdata) + " overall, in the #" + str(JVRNdata) + " round, in year " + str(JVDYdata) + ". \n") 
+
+        elif StatChosen == 12:
+            JVHdata = datajson ['data'][14]['playerHeight']
+            JVWdata = datajson ['data'][14]['playerWeight']
+            print ("\n Jakub Vorácek is " + str(JVHdata) + " inches tall and weighs " + str(JVWdata) + " pounds. \n")
+
+        elif StatChosen == 13:
+            JVPosdata = datajson ['data'][14]['playerPositionCode']
+            JVSdata = datajson ['data'][14]['playerShootsCatches']
+            JVTdata = datajson ['data'][14]['playerTeamsPlayedFor']
+            print ("\n Jakub Vorácek plays " + str(JVPosdata) + "ight Wing, Shoots " + str(JVSdata) + "eft, and played for " + str(JVTdata) + " in 2017-2018. \n")
+
+        else:
+            print("ERROR PLEASE TRY AGAIN")
+
+
+
+
+
+
+
+
+
+
+
+    else:
+            print("ERROR PLEASE TRY AGAIN")
 main()

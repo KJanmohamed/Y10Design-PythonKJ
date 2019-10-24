@@ -1,0 +1,155 @@
+#Evan Van
+#Upper Canada College
+#Y10 Coding
+#Mr. Jugoon
+
+import json
+import requests
+import webbrowser
+
+#–––––––––––––––––––––––––––––––– Helper Functions –––––––––––––––––––––––––––––––
+
+#The datas below act as "place holders"
+def writeHTML(data1, data2, data3, data4, data5):
+    myfile = open("playerAPI.html","w")
+
+    #The file's location is different for every user
+    filename1 = 'file:///Users/evan.van/Desktop//Git Repo/Y10Design-PythonEV/playerAPI.html'
+
+    #Opens the HTML file in a new tab
+    webbrowser.open_new_tab(filename1)
+    
+#–––––––––––––––––––––––––––––––––––– HTML/CSS –––––––––––––––––––––––––––––––––––
+   
+    #The HTML code for the webpage
+    myfile.write("""
+<!DOCTYPE html>
+<html>
+    <title>Arsenal F.C. Player Info</title>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font: 400 15px/1.8 "Lato", sans-serif;
+      color: #db3535;
+    }
+    .image1, .image2 {
+      position: relative;
+      opacity: 0.65;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .image1 {
+      background-image: url("https://images7.alphacoders.com/970/970081.jpg");
+      min-height: 100%;
+    }
+    .image2 {
+      background-image: url("https://premierleague-static-files.s3.amazonaws.com/premierleague/photo/2017/11/30/7e5cfb87-c1b8-49c3-9a5a-c8fb84d94ab8/882108058.jpg");
+      min-height: 750px;
+    }
+    .caption {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      text-align: center;
+      color: #000;
+    }
+    .caption span.border {
+      background-color: #111;
+      color: #fff;
+      padding: 18px;
+      font-size: 25px;
+      letter-spacing: 10px;
+    }
+    h1 {
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font: 20px "Lato", sans-serif;
+      color: #111;
+    }
+    }
+    </style>
+    </head>
+    <body>
+    <div class="image1">
+      <div class="caption">
+      <span class="border">"""+ data1+"""</span>
+      </div>
+    </div>
+    <div style="color: #777;background-color:white;text-align:center;padding:75px 200px;text-align: justify;">
+      <h1 style="text-align:center;">Player Information</h1>
+      <p>Date of Birth: """+ data2+"""</p>
+      <p>Position: """+ data3+"""</p>
+      <p>Nationality: """+ data4+"""</p>
+      <p>Description: """+ data5+"""</p>
+    </div>
+    <div class="image2">
+      <div class="caption">
+      <span class="border">Go to <a href='https://www.thesportsdb.com/api.php'>The Sports DB</a> for API Info.</span>
+      </div>
+    </div>
+    </body></html>""")
+
+    myfile.close()
+
+#––––––––––––––––––––––––––––––––––––––– Request –––––––––––––––––––––––––––––––––––––––
+
+#Contains the data retrieved by "requests" from the api site
+request = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchplayers.php?t=Arsenal")
+
+request_text = request.text
+
+data = json.loads(request_text)
+
+#––––––––––––––––––––––––––––––––––– List of Players –––––––––––––––––––––––––––––––––––
+
+#Displays the players on the Arsenal F.C. Team
+varPlayer = input("List of Arsenal F.C. Players \nPlease Select A Player \n 1. Hector Bellerin \n 2. Mesut Ozil \n 3. Emiliano Martinez \n 4. Calum Chambers \n 5. Matt Macey \n 6. Ainsley Maitland-Niles \n 7. Kieran Tierney \n 8. Alexandre Lacazette \n 9. Shkodran Mustafi \n 10. David Luiz \n 11. Sokratis Papastathopoulos \n 12. Pierre-Emerick Aubameyang \n 13. Bernd Leno \n 14. Daniel Ceballos \n 15. Granit Xhaka \n 16. Rob Holding \n 17. Sead Kolasinac \n 18. Konstantinos Mavropanos \n 19. Matteo Guendouzi \n 20. Lucas Torreira \n 21. Unai Emery \n 22. Nicolas Pepe \n 23. Jherson Vergara \n 24. Victor Alvarez \n 25. Maksim Belyayev \n")
+
+#––––––––––––––––––––––––––––––––––– Hector Bellerin –––––––––––––––––––––––––––––––––––
+
+#The following code below is repeated 25 times for each player
+#Displays the selected player when the user enters "1"
+if varPlayer == "1":
+    print(" ")
+    print ("Selected Player: Hector Bellerin")
+
+    #Pulls specific data from the API (ie. player name, player position, etc)
+    varData = request.json()
+    varPlayer1 = varData ['player'] [0] ['strPlayer']
+    varBorn1 = varData ['player'][0]['dateBorn']
+    varPosition1 = varData ['player'][0]['strPosition']
+    varNationality1 = varData ['player'][0]['strNationality']
+    varDescription1 = varData ['player'][0]['strDescriptionEN']
+
+    #Allows the user to either enter "y" for yes and "n" for no    
+    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+
+    #The user can either enter a capital or lowercase "y"
+    if openWeb == "Y" or "y":
+        
+        #These variables are used in the HTML section above
+        writeHTML(varPlayer1, varBorn1, varPosition1, varNationality1, varDescription1)
+
+    #The user can either enter a capital or lowercase "n"
+    elif openWeb == "N" or "n":
+
+        print(" ")
+        print("Thank you for using this program")
+        print(" ")
+
+        #A graceful way to exit the program
+        input("Press ENTER to quit the program")
+
+    #If the user types anything else besides a "Y", "y", "N" or "n", then the program would display that the character is invalid
+    else:
+
+        print(" ")
+        print("Invalid character given")
+        print(" ")
+        input("Press ENTER to quit the program")
