@@ -5,6 +5,7 @@
 import requests
 import json
 import pprint
+import webbrowser
 
 #                                           *--------------  MENU SYSTEM -----------------*
 
@@ -38,12 +39,18 @@ ItemChosen = int(input("Please make your selection - if not a valid answer the p
 
 
 #                                           *--------------  HTML FILE -----------------*
-
 def writeHTML(data):
-    myfile = open("myapi.html","w") # use "a" to "append"    
+    myfile = open("myapi.html","w")
+
+    #The file's location is different for every user
+    filename1 = 'file:///Users/kalen.janmohamed/Desktop/Git%20Repo/Y10Design-PythonKJ/myapi.html'
+
+    #Opens the HTML file in a new tab
+    webbrowser.open_new_tab(filename1)
+
     myfile.write("""
     <html>
-<title></title>
+<title> NHL STATS 2017-2018 </title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <style>
 body {font-family:'Lato';}
@@ -115,7 +122,6 @@ body {
 </style>
 
 <body>
-
 <!-- NavBar -->
 
 <ul id="navbar">
@@ -123,10 +129,11 @@ body {
 
   <li><a href="https://sites.google.com/ucc.on.ca/year9designcoding-kjanmohamed/introduction-year-10"> ABOUT ME </a></li>
 
+  <li style="float:right"><a href="http://www.nhl.com/stats/rest/skaters?isAggregate=false&reportType=basic&isGame=false&reportName=skatersummary&sort=[{%22property%22:%22points%22,%22direction%22:%22DESC%22},{%22property%22:%22goals%22,%22direction%22:%22DESC%22},{%22property%22:%22assists%22,%22direction%22:%22DESC%22}]&cayenneExp=gameTypeId=2%20and%20seasonId%3E=20172018%20and%20seasonId%3C=20172018"> LINK TO API </a></li>
+
   <li style="float:right"><a href="https://github.com/KJanmohamed/Y10Design-PythonKJ/blob/master/CodingProject1-Code.py"> LINK TO THE CODE </a></li>
 
   <li style="float:right"><a href="https://github.com/KJanmohamed"> MY GITHUB </a></li>
-
 
 </ul>
 
@@ -144,9 +151,10 @@ body {
 
 <p id="header" > SHORT SUMMARY </p>
 
-<p id="text" > </p> 
+<p id="text" > Hello! This is a message from the author of the program, Kalen Janmohamed! I used the API from the button up above that will take you to it. Was this project hard, YES! Did it teach me a lot about programming, Yes as well. The main skill I gained from this was problem solving however. I am a student at Upper Canada College in Toronto. This is a project for my Computer Science class, and the reason I chose to do it on hockey stats is because of my pride in the sport. From a young age, I'm sure many canadians can relate, I have played organized hockey. It wasn't until 2 years ago that I made my way to Single A Hockey, a great accoplishment for me personally. My family has been immersed in the world of hockey, always making a trip to a different place every year to watch my hometown team, Toronto Maple Leafs. I hope you enjoy the program as much as I enjoyed creating it. Please click the buttons at the top of you screen for the in depth code for this program as well as some information on me! </p> 
 
 </body>
+
 </html>""")
 
     myfile.close()
@@ -198,7 +206,10 @@ def main():
 
         #                                           *--------------  STAT CHOSEN VARIABLE -----------------*
 
-        StatChosen = int(input("Please make your selection - if not a valid answer the program will not continue. \n"))
+        StatChosen = int(input(" \n Please make your selection - if not a valid answer the program will not continue. \n"))
+
+        print("\n \n YOU WILL HAVE TO REFRESH THE WEBPAGE! \n")
+ 
 
         #                                           *--------------  GAMES PLAYED -----------------*
 
@@ -347,7 +358,11 @@ def main():
 
         #                                           *--------------  STAT CHOSEN VARIABLE -----------------*
 
-        StatChosen = int(input("Please make your selection. \n"))
+        StatChosen = int(input(" \n Please make your selection. \n"))
+
+        #                                           
+
+        print("\n\n YOU WILL HAVE TO REFRESH THE WEBPAGE! \n")
 
         #                                           *--------------  GAMES PLAYED -----------------*
 
@@ -462,24 +477,6 @@ def main():
 
             print("ERROR PLEASE TRY AGAIN")    
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                                     #*********************** CROSBY ***********************
 
     elif ItemChosen == 3:
@@ -516,7 +513,11 @@ def main():
 
         #                                           *--------------  STAT CHOSEN VARIABLE -----------------*
 
-        StatChosen = int(input("Please make your selection. \n"))
+        StatChosen = int(input(" \n Please make your selection. \n"))
+
+        #                                           
+
+        print("\n\n YOU WILL HAVE TO REFRESH THE WEBPAGE! \n")
 
         #                                           *--------------  GAMES PLAYED -----------------*
 
@@ -629,20 +630,6 @@ def main():
         else:
             print("ERROR PLEASE TRY AGAIN")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                                     #*********************** MATTHEWS ***********************
 
     elif ItemChosen == 4:
@@ -679,7 +666,11 @@ def main():
 
         #                                           *--------------  STAT CHOSEN VARIABLE -----------------*
 
-        StatChosen = int(input("Please make your selection. \n"))
+        StatChosen = int(input(" \n Please make your selection. \n"))
+
+        #                                           
+
+        print("\n\n YOU WILL HAVE TO REFRESH THE WEBPAGE! \n")
 
         #                                           *--------------  GAMES PLAYED -----------------*
 
@@ -792,22 +783,6 @@ def main():
         else:
             print("ERROR PLEASE TRY AGAIN")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                                     #*********************** MACKINNON ***********************
 
     elif ItemChosen == 5:
@@ -844,7 +819,11 @@ def main():
 
         #                                           *--------------  STAT CHOSEN VARIABLE -----------------*
 
-        StatChosen = int(input("Please make your selection. \n"))
+        StatChosen = int(input(" \n Please make your selection. \n"))
+
+        #                                           
+
+        print("\n\n YOU WILL HAVE TO REFRESH THE WEBPAGE! \n")
 
         #                                           *--------------  GAMES PLAYED -----------------*
 
@@ -957,24 +936,6 @@ def main():
         else:
             print("ERROR PLEASE TRY AGAIN")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                                     #*********************** KUCHEROV ***********************
 
     elif ItemChosen == 6:
@@ -1011,7 +972,11 @@ def main():
 
         #                                           *--------------  STAT CHOSEN VARIABLE -----------------*
 
-        StatChosen = int(input("Please make your selection. \n"))
+        StatChosen = int(input(" \n Please make your selection. \n"))
+
+        #                                           
+
+        print("\n\n YOU WILL HAVE TO REFRESH THE WEBPAGE! \n")
 
         #                                           *--------------  GAMES PLAYED -----------------*
 
@@ -1124,26 +1089,6 @@ def main():
         else:
             print("ERROR PLEASE TRY AGAIN")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                                     #*********************** OVECHKIN ***********************
 
     elif ItemChosen == 7:
@@ -1180,7 +1125,11 @@ def main():
 
         #                                           *--------------  STAT CHOSEN VARIABLE -----------------*
 
-        StatChosen = int(input("Please make your selection. \n"))
+        StatChosen = int(input(" \n Please make your selection. \n"))
+
+        #                                           
+
+        print("\n\n YOU WILL HAVE TO REFRESH THE WEBPAGE! \n")
 
         #                                           *--------------  GAMES PLAYED -----------------*
 
@@ -1293,28 +1242,6 @@ def main():
         else:
             print("ERROR PLEASE TRY AGAIN")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                                     #*********************** KANE ***********************
 
     elif ItemChosen == 8:
@@ -1351,7 +1278,11 @@ def main():
 
         #                                           *--------------  STAT CHOSEN VARIABLE -----------------*
 
-        StatChosen = int(input("Please make your selection. \n"))
+        StatChosen = int(input(" \n Please make your selection. \n"))
+
+        #                                           
+
+        print("\n\n YOU WILL HAVE TO REFRESH THE WEBPAGE! \n")
 
         #                                           *--------------  GAMES PLAYED -----------------*
 
@@ -1464,27 +1395,6 @@ def main():
         else:
             print("ERROR PLEASE TRY AGAIN")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                                     #*********************** NYLANDER ***********************
 
     elif ItemChosen == 9:
@@ -1521,7 +1431,11 @@ def main():
 
         #                                           *--------------  STAT CHOSEN VARIABLE -----------------*
 
-        StatChosen = int(input("Please make your selection. \n"))
+        StatChosen = int(input(" \n Please make your selection. \n"))
+
+        #                                           
+
+        print("\n\n YOU WILL HAVE TO REFRESH THE WEBPAGE! \n")
 
         #                                           *--------------  GAMES PLAYED -----------------*
 
@@ -1634,25 +1548,6 @@ def main():
         else:
             print("ERROR PLEASE TRY AGAIN")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                                     #*********************** TAVARES ***********************
 
     elif ItemChosen == 10:
@@ -1689,7 +1584,11 @@ def main():
 
         #                                           *--------------  STAT CHOSEN VARIABLE -----------------*
 
-        StatChosen = int(input("Please make your selection. \n"))
+        StatChosen = int(input(" \n Please make your selection. \n"))
+
+        #                                           
+
+        print("\n\n YOU WILL HAVE TO REFRESH THE WEBPAGE! \n")
 
         #                                           *--------------  GAMES PLAYED -----------------*
 
@@ -1802,19 +1701,6 @@ def main():
         else:
             print("ERROR PLEASE TRY AGAIN")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
                                     #*********************** GIROUX ***********************
 
     elif ItemChosen == 11:
@@ -1851,7 +1737,11 @@ def main():
 
         #                                           *--------------  STAT CHOSEN VARIABLE -----------------*
 
-        StatChosen = int(input("Please make your selection. \n"))
+        StatChosen = int(input(" \n Please make your selection. \n"))
+
+        #                                           
+
+        print("\n\n YOU WILL HAVE TO REFRESH THE WEBPAGE! \n")
 
         #                                           *--------------  GAMES PLAYED -----------------*
 
@@ -1964,21 +1854,6 @@ def main():
         else:
             print("ERROR PLEASE TRY AGAIN")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                                                 #*********************** MALKIN ***********************
 
     elif ItemChosen == 12:
@@ -2015,7 +1890,11 @@ def main():
 
         #                                           *--------------  STAT CHOSEN VARIABLE -----------------*
 
-        StatChosen = int(input("Please make your selection. \n"))
+        StatChosen = int(input(" \n Please make your selection. \n"))
+
+        #                                           
+
+        print("\n\n YOU WILL HAVE TO REFRESH THE WEBPAGE! \n")
 
         #                                           *--------------  GAMES PLAYED -----------------*
 
@@ -2128,28 +2007,6 @@ def main():
         else:
             print("ERROR PLEASE TRY AGAIN")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                                     #*********************** HALL ***********************
 
     elif ItemChosen == 13:
@@ -2186,7 +2043,11 @@ def main():
 
         #                                           *--------------  STAT CHOSEN VARIABLE -----------------*
 
-        StatChosen = int(input("Please make your selection. \n"))
+        StatChosen = int(input(" \n Please make your selection. \n"))
+
+        #                                           
+
+        print("\n\n YOU WILL HAVE TO REFRESH THE WEBPAGE! \n")
 
         #                                           *--------------  GAMES PLAYED -----------------*
 
@@ -2299,23 +2160,6 @@ def main():
         else:
             print("ERROR PLEASE TRY AGAIN")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                                     #*********************** KOPITAR ***********************
 
     elif ItemChosen == 14:
@@ -2352,7 +2196,11 @@ def main():
 
         #                                           *--------------  STAT CHOSEN VARIABLE -----------------*
 
-        StatChosen = int(input("Please make your selection. \n"))
+        StatChosen = int(input(" \n Please make your selection. \n"))
+
+        #                                           
+
+        print("\n\n YOU WILL HAVE TO REFRESH THE WEBPAGE! \n")
 
         #                                           *--------------  GAMES PLAYED -----------------*
 
@@ -2465,17 +2313,6 @@ def main():
         else:
             print("ERROR PLEASE TRY AGAIN")
 
-
-
-
-
-
-
-
-
-
-
-
                                     #*********************** KESSEL ***********************
 
     elif ItemChosen == 15:
@@ -2512,7 +2349,11 @@ def main():
 
         #                                           *--------------  STAT CHOSEN VARIABLE -----------------*
 
-        StatChosen = int(input("Please make your selection. \n"))
+        StatChosen = int(input(" \n Please make your selection. \n"))
+
+        #                                           
+
+        print("\n\n YOU WILL HAVE TO REFRESH THE WEBPAGE! \n")
 
         #                                           *--------------  GAMES PLAYED -----------------*
 
@@ -2625,16 +2466,6 @@ def main():
         else:
             print("ERROR PLEASE TRY AGAIN")
 
-
-
-
-
-
-
-
-
-
-
                                     #*********************** WHEELER ***********************
 
     elif ItemChosen == 16:
@@ -2671,7 +2502,11 @@ def main():
 
         #                                           *--------------  STAT CHOSEN VARIABLE -----------------*
 
-        StatChosen = int(input("Please make your selection. \n"))
+        StatChosen = int(input(" \n Please make your selection. \n"))
+
+        #                                           
+
+        print("\n\n YOU WILL HAVE TO REFRESH THE WEBPAGE! \n")
 
         #                                           *--------------  GAMES PLAYED -----------------*
 
@@ -2784,13 +2619,6 @@ def main():
         else:
             print("ERROR PLEASE TRY AGAIN")
 
-
-
-
-
-
-
-
                                     #*********************** STAMKOS ***********************
 
     elif ItemChosen == 17:
@@ -2827,7 +2655,11 @@ def main():
 
         #                                           *--------------  STAT CHOSEN VARIABLE -----------------*
 
-        StatChosen = int(input("Please make your selection. \n"))
+        StatChosen = int(input(" \n Please make your selection. \n"))
+
+        #                                           
+
+        print("\n\n YOU WILL HAVE TO REFRESH THE WEBPAGE! \n")
 
         #                                           *--------------  GAMES PLAYED -----------------*
 
@@ -2940,17 +2772,6 @@ def main():
         else:
             print("ERROR PLEASE TRY AGAIN")
 
-
-
-
-
-
-
-
-
-
-                                    
-
                                     #*********************** MARCHAND ***********************
     elif ItemChosen == 18:
 
@@ -2986,7 +2807,11 @@ def main():
 
         #                                           *--------------  STAT CHOSEN VARIABLE -----------------*
 
-        StatChosen = int(input("Please make your selection. \n"))
+        StatChosen = int(input(" \n Please make your selection. \n"))
+
+        #                                           
+
+        print("\n\n YOU WILL HAVE TO REFRESH THE WEBPAGE! \n")
 
         #                                           *--------------  GAMES PLAYED -----------------*
 
@@ -3099,13 +2924,6 @@ def main():
         else:
             print("ERROR PLEASE TRY AGAIN")
 
-
-
-
-
-
-                                    
-
                                     #*********************** BARZAL ***********************
     elif ItemChosen == 19:
 
@@ -3141,7 +2959,11 @@ def main():
 
         #                                           *--------------  STAT CHOSEN VARIABLE -----------------*
 
-        StatChosen = int(input("Please make your selection. \n"))
+        StatChosen = int(input(" \n Please make your selection. \n"))
+
+        #                                           
+
+        print("\n\n YOU WILL HAVE TO REFRESH THE WEBPAGE! \n")
 
         #                                           *--------------  GAMES PLAYED -----------------*
 
@@ -3255,13 +3077,6 @@ def main():
             print("ERROR PLEASE TRY AGAIN")
 
 
-
-
-
-
-
-
-
                                     #*********************** VORÁCEK ***********************
     elif ItemChosen == 20:
 
@@ -3297,7 +3112,11 @@ def main():
 
         #                                           *--------------  STAT CHOSEN VARIABLE -----------------*
 
-        StatChosen = int(input("Please make your selection. \n"))
+        StatChosen = int(input(" \n Please make your selection. \n"))
+
+        #                                           
+
+        print("\n\n YOU WILL HAVE TO REFRESH THE WEBPAGE! \n")
 
         #                                           *--------------  GAMES PLAYED -----------------*
 
@@ -3409,16 +3228,6 @@ def main():
 
         else:
             print("ERROR PLEASE TRY AGAIN")
-
-
-
-
-
-
-
-
-
-
 
     else:
             print("ERROR PLEASE TRY AGAIN")
