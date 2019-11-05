@@ -1,155 +1,141 @@
-#Evan Van
-#Upper Canada College
-#Y10 Coding
-#Mr. Jugoon
+# Author: Kalen Janmohamed
+# For: Mr. Jugoon
+# Date: October 25 2019
 
-import json
 import requests
-import webbrowser
+import json
+import pprint
 
-#–––––––––––––––––––––––––––––––– Helper Functions –––––––––––––––––––––––––––––––
+#                                           *--------------  MENU SYSTEM -----------------*
 
-#The datas below act as "place holders"
-def writeHTML(data1, data2, data3, data4, data5):
-    myfile = open("playerAPI.html","w")
+print ("Hello! Welcome to THE NHL STATS OUTPUT MACHINE! \n ")
+print ("Here is the selection that you can choose from. \n ")
 
-    #The file's location is different for every user
-    filename1 = 'file:///Users/evan.van/Desktop//Git Repo/Y10Design-PythonEV/playerAPI.html'
+print (" Enter 1 for Connor McDavid. \n")
+print (" Enter 2 for Mitch Marner. \n")
+print (" Enter 3 for Sidney Crosby. \n")
+print (" Enter 4 for Auston Matthews. \n")
+print (" Enter 5 for Nathan MacKinnon. \n")
+print (" Enter 6 for Nikita Kucherov. \n")
+print (" Enter 7 for Alexander Ovechkin. \n")
+print (" Enter 8 for Patrick Kane. \n")
+print (" Enter 9 for William Nylander. \n")
+print (" Enter 10 for John Tavares. \n")
+print (" Enter 11 for Claude Giroux. \n")
+print (" Enter 12 for Evgeni Malkin. \n")
+print (" Enter 13 for Taylor Hall. \n")
+print (" Enter 14 for Anze Kopitar. \n")
+print (" Enter 15 for Phil Kessel. \n")
+print (" Enter 16 for Blake Wheeler. \n")
+print (" Enter 17 for Steven Stamkos. \n")
+print (" Enter 18 for Brad Marchand. \n")
+print (" Enter 19 for Matthew Barzal. \n")
+print (" Enter 20 for Jakub Vorácek. \n")
 
-    #Opens the HTML file in a new tab
-    webbrowser.open_new_tab(filename1)
-    
-#–––––––––––––––––––––––––––––––––––– HTML/CSS –––––––––––––––––––––––––––––––––––
-   
-    #The HTML code for the webpage
+#                                           *--------------  ITEM CHOSEN VARIABLE -----------------*
+
+ItemChosen = int(input("Please make your selection - if not a valid answer the program will not continue. \n"))
+
+
+#                                           *--------------  HTML FILE -----------------*
+
+'''
+def writeHTML(data):
+    myfile = open("myapi.html","w")
+    myfile.write("<h1> 2017-2018 NHL SEASON STATS </h1>")
+    myfile.write("<h3> THIS INCLUDES ALL THE PLAYERS IN THE NHL WITH THEIR PERSONAL STATS AND INFORMATION </h1>")
+    myfile.write(data)
+    myfile.close()
+'''
+
+def writeHTML(data):
+    myfile = open("playerAPI.html","w") # use "a" to "append"    
     myfile.write("""
-<!DOCTYPE html>
-<html>
-    <title>Arsenal F.C. Player Info</title>
-    <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-    body, html {
-      height: 100%;
-      margin: 0;
-      font: 400 15px/1.8 "Lato", sans-serif;
-      color: #db3535;
-    }
-    .image1, .image2 {
-      position: relative;
-      opacity: 0.65;
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-    .image1 {
-      background-image: url("https://images7.alphacoders.com/970/970081.jpg");
-      min-height: 100%;
-    }
-    .image2 {
-      background-image: url("https://premierleague-static-files.s3.amazonaws.com/premierleague/photo/2017/11/30/7e5cfb87-c1b8-49c3-9a5a-c8fb84d94ab8/882108058.jpg");
-      min-height: 750px;
-    }
-    .caption {
-      position: absolute;
-      left: 0;
-      top: 50%;
-      width: 100%;
-      text-align: center;
-      color: #000;
-    }
-    .caption span.border {
-      background-color: #111;
-      color: #fff;
-      padding: 18px;
-      font-size: 25px;
-      letter-spacing: 10px;
-    }
-    h1 {
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      font: 20px "Lato", sans-serif;
-      color: #111;
-    }
-    }
-    </style>
-    </head>
-    <body>
-    <div class="image1">
-      <div class="caption">
-      <span class="border">"""+ data1+"""</span>
-      </div>
-    </div>
-    <div style="color: #777;background-color:white;text-align:center;padding:75px 200px;text-align: justify;">
-      <h1 style="text-align:center;">Player Information</h1>
-      <p>Date of Birth: """+ data2+"""</p>
-      <p>Position: """+ data3+"""</p>
-      <p>Nationality: """+ data4+"""</p>
-      <p>Description: """+ data5+"""</p>
-    </div>
-    <div class="image2">
-      <div class="caption">
-      <span class="border">Go to <a href='https://www.thesportsdb.com/api.php'>The Sports DB</a> for API Info.</span>
-      </div>
-    </div>
-    </body></html>""")
+    <html>
+
+      <head>
+        <title> MY PAGE </title>
+      </head>
+
+      <body>
+        <font size="3" color="red">This is some text!</font>
+        <font size="2" color="blue">This is some text!</font>
+        <font face="verdana" color="green">This is some text!</font>
+        <h1>Welcome to My Soccer Home Page</h1>
+
+        <p>Go to <a href='https://apilist.fun/api/the-sports-db'>The Sports DB</a> for API Info.</p>
+
+        <h1 style="background-color:DodgerBlue;">Here is player you requested</h1>
+
+        <p>The Data you requested is: """+ data+"""</p>
+
+        <p style="font-family:verdana">This is a paragraph.</p>
+
+        <p style="font-family:'Courier New'">This is another paragraph.</p>
+
+      </body>
+
+    </html>""")
 
     myfile.close()
 
-#––––––––––––––––––––––––––––––––––––––– Request –––––––––––––––––––––––––––––––––––––––
+def main():
 
-#Contains the data retrieved by "requests" from the api site
-request = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchplayers.php?t=Arsenal")
+#                                           *--------------  CALL TO API -----------------*
 
-request_text = request.text
+    response = requests.get("http://www.nhl.com/stats/rest/skaters?isAggregate=false&reportType=basic&isGame=false&reportName=skatersummary&sort=[{%22property%22:%22points%22,%22direction%22:%22DESC%22},{%22property%22:%22goals%22,%22direction%22:%22DESC%22},{%22property%22:%22assists%22,%22direction%22:%22DESC%22}]&cayenneExp=gameTypeId=2%20and%20seasonId%3E=20172018%20and%20seasonId%3C=20172018")
+    data = response.content # response comes in as byte data type
+    data_as_str = data.decode()    # decode to str
+    #writeHTML(data_as_str)  # call function to write string data to HTML file
 
-data = json.loads(request_text)
+    datajson = response.json()
 
-#––––––––––––––––––––––––––––––––––– List of Players –––––––––––––––––––––––––––––––––––
+                                    #*********************** MCDAVID ***********************
 
-#Displays the players on the Arsenal F.C. Team
-varPlayer = input("List of Arsenal F.C. Players \nPlease Select A Player \n 1. Hector Bellerin \n 2. Mesut Ozil \n 3. Emiliano Martinez \n 4. Calum Chambers \n 5. Matt Macey \n 6. Ainsley Maitland-Niles \n 7. Kieran Tierney \n 8. Alexandre Lacazette \n 9. Shkodran Mustafi \n 10. David Luiz \n 11. Sokratis Papastathopoulos \n 12. Pierre-Emerick Aubameyang \n 13. Bernd Leno \n 14. Daniel Ceballos \n 15. Granit Xhaka \n 16. Rob Holding \n 17. Sead Kolasinac \n 18. Konstantinos Mavropanos \n 19. Matteo Guendouzi \n 20. Lucas Torreira \n 21. Unai Emery \n 22. Nicolas Pepe \n 23. Jherson Vergara \n 24. Victor Alvarez \n 25. Maksim Belyayev \n")
+    if ItemChosen == 1:
 
-#––––––––––––––––––––––––––––––––––– Hector Bellerin –––––––––––––––––––––––––––––––––––
+                                    #*********************** OPTIONS ***********************
 
-#The following code below is repeated 25 times for each player
-#Displays the selected player when the user enters "1"
-if varPlayer == "1":
-    print(" ")
-    print ("Selected Player: Hector Bellerin")
+        print (" Now please choose one of the following stats/personal info. \n")
 
-    #Pulls specific data from the API (ie. player name, player position, etc)
-    varData = request.json()
-    varPlayer1 = varData ['player'] [0] ['strPlayer']
-    varBorn1 = varData ['player'][0]['dateBorn']
-    varPosition1 = varData ['player'][0]['strPosition']
-    varNationality1 = varData ['player'][0]['strNationality']
-    varDescription1 = varData ['player'][0]['strDescriptionEN']
+        print (" Enter 1 for Games Played (GP). \n")
 
-    #Allows the user to either enter "y" for yes and "n" for no    
-    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+        print (" Enter 2 for Goals (G), Assists (A), Points (P) and Points Per Game (PPG). \n")
 
-    #The user can either enter a capital or lowercase "y"
-    if openWeb == "Y" or "y":
-        
-        #These variables are used in the HTML section above
-        writeHTML(varPlayer1, varBorn1, varPosition1, varNationality1, varDescription1)
+        print (" Enter 3 for Game Winning Goals (GWG). \n")
 
-    #The user can either enter a capital or lowercase "n"
-    elif openWeb == "N" or "n":
+        print (" Enter 4 for Plus/Minus (+/-). \n")
 
-        print(" ")
-        print("Thank you for using this program")
-        print(" ")
+        print (" Enter 5 for Penalty Minutes (PM). \n")
 
-        #A graceful way to exit the program
-        input("Press ENTER to quit the program")
+        print (" Enter 6 for Power Play Goals (PPG) and Power Play Points (PPP). \n")
+                        
+        print (" Enter 7 for Shorthanded Goals (SH) and Shorthanded Points (SP). \n")
 
-    #If the user types anything else besides a "Y", "y", "N" or "n", then the program would display that the character is invalid
-    else:
+        print (" Enter 8 for Faceoff Percentage (Faceoff%), Shots (S) and Shooting Percentage (S%). \n")
+           
+        print (" Enter 9 for Shifts Per Game and Time on Ice Per Game. \n")
 
-        print(" ")
-        print("Invalid character given")
-        print(" ")
-        input("Press ENTER to quit the program")
+        print (" Enter 10 for Birth Date, City, State/Province/Territory, Country, Nationality. \n")
+
+        print (" Enter 11 for Draft Overall Pick Number, Round Number, Draft Year. \n")
+
+        print (" Enter 12 for Height and Weight. \n")
+
+        print (" Enter 13 for Position, Shoots/Catches, Team. \n")
+
+        #                                           *--------------  STAT CHOSEN VARIABLE -----------------*
+
+        StatChosen = int(input("Please make your selection - if not a valid answer the program will not continue. \n"))
+
+        #                                           *--------------  GAMES PLAYED -----------------*
+
+        if StatChosen == 1:
+
+            CMGPdata = datajson ['data'][0]['gamesPlayed']
+            print ("\n Connor McDavid had " + str(CMGPdata) + " Games Played in 2017-2018. \n")
+
+            #######ADD THIS IN #########
+            writeHTML(str(CMGPdata))
+
+main()
