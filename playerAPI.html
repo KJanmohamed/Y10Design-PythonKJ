@@ -1,58 +1,206 @@
+
 <!DOCTYPE html>
 <html>
+<title>Arsenal F.C. Player Info</title>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<style>
 
-    <title>Arsenal F.C. Player Info</title>
-    <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-    body, html {
-      height: 100%;
-      margin: 0;
-      font: 400 15px/1.8 "Lato", sans-serif;
-      color: #db3535;
-    }
-    .image1, .image2 {
-      position: relative;
-      opacity: 0.65;
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-    .image1 {
-      background-image: url("https://ev-database.org/img/auto/Tesla_Model_3/Tesla_Model_3-01.jpg");
-      min-height: 100%;
-    }
-    .caption {
-      position: absolute;
-      left: 0;
-      top: 50%;
-      width: 100%;
-      text-align: center;
-      color: #000;
-    }
-    .caption span.border {
-      background-color: #111;
-      color: #fff;
-      padding: 18px;
-      font-size: 25px;
-      letter-spacing: 10px;
-    }
-    h1 {
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      font: 20px "Lato", sans-serif;
-      color: #111;
-    }
-    }
-    </style>
-    </head>
-    <body>
+ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+background-color: #57AB3A;
+position: -webkit-sticky;
+position: sticky;
+top: 0;
+}
+li {
+float: left;
+}
+li a {
+display: block;
+color: white;
+text-align: center;
+padding: 18px 20px;
+text-decoration: none;
+}
+li a:hover {
+background-color: #2D67C8;
+}
 
-    <div class="image1">
-      <div class="caption">
-      <span class="border"> How Climate Change Could Lead to the End of Human Existance </span>
-      </div>
-    </div>
+.image1, .image2 {
+  position: relative;
+  opacity: 0.65;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.image2 {
+  background-image: url("https://premierleague-static-files.s3.amazonaws.com/premierleague/photo/2017/11/30/7e5cfb87-c1b8-49c3-9a5a-c8fb84d94ab8/882108058.jpg");
+  min-height: 750px;
+}
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
 
-    </body></html>
+.active {
+background-color: #57AB3A;
+}
+.flex-container {
+display: flex;
+flex-wrap: nowrap;
+background-color: #57AB3A;
+justify-content: center;
+padding: 25px 16px
+}
+.flex-container > div {
+background-color: #f1f1f1;
+height: 200px;
+width: 200px;
+margin: 10px;
+text-align: center;
+line-height: 75px;
+font-size: 30px;
+padding: 25px 16px
+}
+#header {
+text-align:center;
+font-size: 30px;
+color: #ffff;
+background-color: #2D67C8;
+padding: 10px 16px
+}
+
+#title {
+text-align:center;
+font-size: 45px;
+color: #ffff;
+background-color: #2D67C8;
+padding: 10px 16px
+}
+#text {
+text-align:center;
+padding: 25px 16px
+}
+</style>
+
+<body>
+
+
+<!-- Header -->
+<ul>
+<li><a class="active" href=""> LINK TO CODE </a></li>
+
+<li><a href=""> MORE CLIMATE CHANGE </a></li>
+
+<li style="float:right"><a href="#contact"> EV TOP 10 </a></li>
+
+<li style="float:right"><a href="#contact"> TESLA MODEL 3 </a></li>
+
+<li style="float:right"><a href="#contact"> NISSAN LEAF </a></li>
+
+<li style="float:right"><a href="#contact"> PORSCHE TAYCAN </a></li>
+
+</ul>
+<div class="image1">
+<div class="caption">
+<span class="border"> IS THERE AN IMMEDIATE ACTION REQUIRED TO REDUCE CLIMATE CHANGE? </span>
+</div>
+</div>
+
+
+
+<!-- MAIN INFORMATION -->
+
+<p id="header" > WHAT IS CLIMATE CHANGE </p>
+
+<p id="text" > TEXT </p>
+
+
+<!-- PHOTOS -->
+
+<div class="flex-container">
+<div> 1 PHOTO
+  <image src=""style="width:60%"> </image>
+<p id="text" > text </p>
+</div>
+<div> 2 PHOTO 
+<img src="/w3images/bandmember.jpg"style="width:60%">
+<p id="text" > text </p>
+</div>
+
+<div> 3 PHOTO 
+<img src="/w3images/bandmember.jpg"style="width:60%">
+<p id="text" > text </p>
+</div>
+</div>
+
+<!-- CARS -->
+
+<p id="header" > CAR INFORMATION </p>
+<p id="text" > TEXT </p>
+
+<!-- PHOTOS -->
+
+<div class="flex-container">
+<div> 1 PHOTO
+  <image src=""style="width:60%"> </image>
+<p id="text" > text </p>
+</div>
+<div> 2 PHOTO 
+<img src="/w3images/bandmember.jpg"style="width:60%">
+<p id="text" > text </p>
+</div>
+
+<div> 3 PHOTO 
+<img src="/w3images/bandmember.jpg"style="width:60%">
+<p id="text" > text </p>
+</div>
+</div>
+
+
+<!-- CALCULATOR --> 
+
+<p id="header" > CALCULATOR </p>
+<p id="text" > TEXT </p>
+
+<p id="text" > 
+
+
+
+
+
+
+
+
+
+
+
+
+
+</p>
+
+
+
+
+
+
+</body>
+</html>
