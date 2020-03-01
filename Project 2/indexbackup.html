@@ -1,0 +1,397 @@
+<!--  Author: Kalen Janmohamed -->
+<!-- For: Mr. Jugoon -->
+<!-- Date: October 25 2019 -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+                                      <!-- ********************* IMPORTS ******************-->
+
+    <!-- Here are the Firebase and Google authentication imports -->
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-database.js"></script>
+
+    <!-- Here are the Google Maps imports -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-q0bDyxOqwE8bspFBp6OKagxmITBgc7Y&callback=initMap"></script>
+    <script https://www.google.com/maps/embed/v1/MODE?key=AIzaSyA-q0bDyxOqwE8bspFBp6OKagxmITBgc7Y&parameters></script>
+          
+    <!-- This is the font used throughout the webpage -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+
+                                      <!-- ********************* CSS ******************-->
+  <style>
+
+    /* This is the CSS for that font (bottom one is for the Company title) */
+    body {font-family:'Lato';}
+    
+    #fonttitle {
+      font-family: 'Permanent Marker', cursive;
+      font-size: 20px;
+    }
+
+    /* This code controls the Navbar (Size and attributes that are applied) */
+    #navbar {
+      list-style-type: none;
+      margin: 0px;
+      padding: 10px;
+      overflow: hidden;
+      background-color: #2196F3;
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;}
+    #navbar li {
+      float: left;}
+    #navbar li a {
+      display: block;
+      color: black;
+      text-align: center;
+      padding: 10px 100px;
+      text-decoration: none;}
+    #navbar li a:hover {
+      background-color: #fff;}
+    .active {
+      background-color: #57AB3A;}
+
+    /* This is the text that is being used (size) */
+    #text1 {
+      text-align:center;
+      color: #333;
+      padding: 25px 16px
+      font-size: 15px;
+      width: 1300px;}
+
+    /* For the header's (size, colour) */
+    #header {
+      text-align:center;
+      font-size: 25px;
+      color: #ffff;
+      background-color: #2D67C8;
+      padding: 10px 16px}
+
+    /* CSS that controls the map (size) */
+    #map {
+      height: 77%;
+      width: 60%;
+      left: 20%;}
+
+    /* Additional map code */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;}
+      
+  </style>
+  </head>
+
+
+                                    <!-- ********************* HTML ******************-->
+  <body>
+
+    <!-- Displays the user ID / state of user log in -->
+    <h1 id="uid"></h1>
+
+    <!-- Controls the Navbar -->
+    <ul id="navbar">
+      <li ><a class="active" href="https://www.topgear.com/car-news/electric/these-are-the-top-ten-everyday-electric-cars-you-need-to-know-about#1"> EV TOP 10 </a></li>
+      <li ><a style="padding:10px 274px" id="fonttitle" > E L E C T R O C I T Y   -   6 I X </a></li>
+      <li style="float:right" ><a class="active" href="https://www.tesla.com/en_ca/model3"> TESLA MODEL 3 </a></li>
+    </ul>
+
+    <!-- First Header - Input of Postal Code -->
+    <p id="header" > PLEASE INPUT YOUR DESIRED POSTAL CODE: (no spaces, all uppercase) 
+
+    <!-- Sign in button (with Javascript at the bottom) calling upon gmail to sign in -->
+    <button onclick = "signin()" >Sign In</button> 
+
+    <!-- Input Box -->
+    <input type="text" id="postalcode" style=" height:20px; width: 65px;" value="Enter Postal Code"> 
+
+    <!-- Search button (with Javascript at the bottom) - displays a list of addresses -->
+    <button onclick = "searchArray()" >Search</button></p>
+
+    <!--For the list of addresses that are outputted -->
+    <p>The stations located in that area are: </p>
+    
+    <!-- Ordered list -->
+    <p><ol id="locationList"></ol></ol></p>  
+
+    <!-- Placeholder for the map --> 
+    <div id="map"></div>  
+        <!-- Set data button (with Javascript at the bottom) ONLY USE ON THE FIRST PUSH OF DATA TO DATABASE-->
+    <button onclick = "setLocationCoordinates()" >Set Data</button></p>
+    
+    <!-- Get data button (with Javascript at the bottom) - displays the hard code for the different addresses-->
+    <button onclick = "getLocationCoordinates()" >Get Data</button></p>   
+              
+  </body>
+
+
+                                    <!-- ********************* JAVA ******************-->  
+  <script>
+
+    // Java for the Google Maps
+    // Variables are used to classify different parts of the Google Maps
+      
+    function initMap() {
+
+      // Reminder in the console (testing purposes)
+      console.log("I am in the code for maps")
+
+      // Position the map will be set when the page refreshes
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 11,
+        // Downtown Toronto
+        center: {lat: 43.672644950012966, lng: -79.41415432095525}});
+
+      // Adding the labels for the markers
+      var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+      // Adding the markers to the map
+      var markers = locations.map(function(location, i) {
+          return new google.maps.Marker({
+          position: location,
+          label: labels[i % labels.length]
+        });
+        });
+
+      // Adding a marker clusterer if there are multiple markers in one place
+      var markerCluster = new MarkerClusterer(map, markers,
+          {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});} 
+
+          // Longitude and Latitude for each marker (organized by letter (ex. A is the first, then B is the second, and so on))
+      var locations = [
+        /* A */ {lat: 43.724920, lng: -79.449340},
+        /* B */ {lat: 43.726483, lng: -79.452977},
+        /* C */ {lat: 43.638660, lng: -79.385712},
+        /* D */ {lat: 43.638969, lng: -79.382683},
+        /* E */ {lat: 43.639840, lng: -79.382990},
+        /* F */ {lat: 43.641476, lng: -79.383887},
+        /* G */ {lat: 43.640850, lng: -79.378710},
+        /* H */ {lat: 43.641338, lng: -79.380577},
+        /* I */ {lat: 43.642860, lng: -79.380920},
+        /* J */ {lat: 43.666360, lng: -79.355390},
+        /* K */ {lat: 43.704080, lng: -79.399280},
+        /* L */ {lat: 43.695700, lng: -79.434100},
+        /* M */ {lat: 43.722390, lng: -79.521720},
+        /* N */ {lat: 43.6118887, lng: -79.5567372},        
+        /* O */ {lat: 43.789615631103516, lng: -79.25869750976562},
+
+        // Extra that were not used
+        /* P */ {lat: -37.819616, lng: 144.968119},
+        /* Q */ {lat: -38.330766, lng: 144.695692},
+        /* R */ {lat: -39.927193, lng: 175.053218},
+        /* S */ {lat: -41.330162, lng: 174.865694},
+        /* T */ {lat: -42.734358, lng: 147.439506},
+        /* U */ {lat: -42.734358, lng: 147.501315},
+        /* V */ {lat: -42.735258, lng: 147.438000},
+        /* W */ {lat: -43.999792, lng: 170.463352}]
+
+
+
+
+
+
+
+
+
+
+
+
+      var provider = new firebase.auth.GoogleAuthProvider();
+      var userId = document.getElementById("uid").innerHTML;
+          
+        // Your web app's Firebase configuration that we copy-and-paste from 
+        // the Firebase setup
+        var config = {
+
+    apiKey: "AIzaSyCTSonK8udUGQEyddI8gq9ku8zkTaZLvlc",
+    authDomain: "ucc2019-8ef16.firebaseapp.com",
+    databaseURL: "https://ucc2019-8ef16.firebaseio.com",
+    projectId: "ucc2019-8ef16",
+    storageBucket: "ucc2019-8ef16.appspot.com",
+    messagingSenderId: "373445594786",
+    appId: "1:373445594786:web:662ce6f65c537eeb6311fb",
+    measurementId: "G-YXP7765MGK"
+        };
+
+        firebase.initializeApp(config);
+        //firebase.analytics();
+
+        // Authentication Check: to see if you are logged in
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user == null) {
+                document.getElementById("uid").innerHTML = "not logged in";
+                return;
+            } else {
+                userId = user.uid; // you can also get .displayName, .photoURL, .email
+                document.getElementById("uid").innerHTML = userId; // display Google uid on page
+                
+            } // end user null check
+        }); // end check auth state
+
+
+        // Functions that will be used to "get" and "set" data, among other "helper"
+        // functions too...
+
+        function signin() {
+            var provider = new firebase.auth.GoogleAuthProvider();
+            firebase.auth().signInWithRedirect(provider).then(function(result) { 
+                window.location.replace("fbtest.html");
+            });
+        } // end signin 
+
+
+        /* We only need to set data if there has been a change latitude-longitude database */
+
+        function setLocationCoordinates() {
+
+            // Create a database object that we can refer to
+            var db = firebase.database();
+
+            // Create a reference to a particular location or "node" called StudentInfo
+            var refGTA = db.ref('LocationCoordinates/Toronto');
+
+            var loc1 = {pcode: "M6A2T9", address: "A/B - 100 Yorkdale Road", lat: 43.724920, lng: -79.449340}
+            var loc2 = {pcode: "M5J2N5", address: "C - 249 Queens Quay W", lat: 43.638660, lng: -79.385712}
+            var loc3 = {pcode: "M5J2G8", address: "D - 235 Queens Quay W", lat: 43.638969, lng: -79.382683}
+            var loc4 = {pcode: "M5J2N1", address: "E - 7 Lower Simcoe St", lat: 43.639840, lng: -79.382990}
+            var loc5 = {pcode: "M5J3A6", address: "F - 51 Lower Simcoe St", lat: 43.641476, lng: -79.383887}
+            var loc6 = {pcode: "M5J0B8", address: "G - 88 Queens Quay W", lat: 43.640850, lng: -79.378710}
+            var loc7 = {pcode: "M5J0A3", address: "H - 1 York St", lat: 43.641338, lng: -79.380577}
+            var loc8 = {pcode: "M5J0A1", address: "I - 75 Bremner Blvd", lat: 43.64286, lng: -79.38092} 
+            var loc9 = {pcode: "M4M2B5", address: "J - 14 St Matthews Rd", lat: 43.666360, lng: -79.355390}
+            var loc10 = {pcode: "M5P1H1", address: "K - 46 Berwick Ave", lat: 43.704080, lng: -79.399280}
+            var loc11 = {pcode: "M6C1W8", address: "L - 205 Ava Rd", lat: 43.695700, lng: -79.434100}
+            var loc12 = {pcode: "M3L1G5", address: "M - 45 Torbarrie Rd", lat: 43.722390, lng: -79.521720}
+            var loc13 = {pcode: "M9C1B8", address: "25 The West Mall", lat: 43.6118887, lng: -79.5567372}
+            var loc14 = {pcode: "M1S3V5", address: "4630 Sheppard Ave E", lat: 43.789615631103516, lng: -79.25869750976562}
+
+            var loc15 = {pcode: "XYZ123", address: "133 Yonge", lat: -37.774785, lng: 145.137978}
+            var loc16 = {pcode: "ABC789", address: "134 Yonge", lat: -37.819616, lng: 144.968119}
+            var loc17 = {pcode: "ABC789", address: "135 Yonge", lat: -38.330766, lng: 144.695692}
+            var loc18 = {pcode: "ABC789", address: "136 Yonge", lat: -39.927193, lng: 175.053218}
+            var loc19 = {pcode: "ABC789", address: "137 Yonge", lat: -41.330162, lng: 174.865694}
+            var loc20 = {pcode: "ABC789", address: "138 Yonge", lat: -42.734358, lng: 147.439506}
+            var loc21 = {pcode: "DEF678", address: "139 Yonge", lat: -42.734358, lng: 147.501315}
+            var loc22 = {pcode: "DEF678", address: "140 Yonge", lat: -42.735258, lng: 147.438000}
+            var loc23 = {pcode: "DEF678", address: "141 Yonge", lat: -43.999792, lng: 170.463352}
+
+            // "PUSH" means we add something to the database
+
+            refGTA.push(loc1);
+            refGTA.push(loc2);
+            refGTA.push(loc3);
+            refGTA.push(loc4);
+            refGTA.push(loc5);
+            refGTA.push(loc6);
+            refGTA.push(loc7);
+            refGTA.push(loc8);
+            refGTA.push(loc9);
+            refGTA.push(loc10);
+            refGTA.push(loc11);
+            refGTA.push(loc12);
+            refGTA.push(loc13);
+            refGTA.push(loc14);
+            refGTA.push(loc15);
+            refGTA.push(loc16);
+            refGTA.push(loc17);
+            refGTA.push(loc18);
+            refGTA.push(loc19);
+            refGTA.push(loc20);
+            refGTA.push(loc21);
+            refGTA.push(loc22);
+            refGTA.push(loc23);
+
+        } // end setdata
+
+        function getLocationCoordinates() {
+
+            document.getElementById("locationList").innerHTML = "";
+
+            var db = firebase.database();
+            var refGetGTA = db.ref('LocationCoordinates/Toronto');
+            refGetGTA.on('value', gotDataLC, errData) 
+
+            refGetGTA.on('value', function(snapshot) {
+              snapshot.forEach(function(childSnapshot) {
+                
+              var childData = childSnapshot.val();
+
+              //var id=childData.id;
+              //console.log(childData);
+
+              var displayLocations = JSON.stringify(childData);
+              var oListCoordinates = document.getElementById('locationList');
+              var entry = document.createElement('li'); // a list element to be added to the ordered list
+              entry.appendChild(document.createTextNode(displayLocations));
+              oListCoordinates.appendChild(entry);
+              
+              });
+            });
+    
+            // jump to the helper function below...think of 'value' as the parameter that is passed
+
+        } // end getLocationCoordinates
+
+        function gotDataLC(data){
+          //just leave this empty for now
+        }
+        
+
+        function searchArray(){
+
+            document.getElementById("locationList").innerHTML = "";
+
+            var seekPostalCode = document.getElementById("postalcode").value;
+
+            var returnArr = [];
+
+            // Make a call to read the whole database and store as an array
+
+            firebase.database().ref('LocationCoordinates/Toronto').on('value', function(snapshot) {
+            // console.log("we are now searching here")
+
+                snapshot.forEach(function(childSnapshot) {
+                var item = childSnapshot.val();
+                item.key = childSnapshot.key;
+                returnArr.push(item);
+                });
+
+                // search the array
+                for(var i = 0; i < returnArr.length; i++){
+
+                    if(returnArr[i].pcode == seekPostalCode){
+                        console.log(returnArr[i]);
+                        console.log("match!")
+
+                        // add in a node because we have a match
+                        var displayPCtoAddress = JSON.stringify(returnArr[i].address);
+                        var oListCoordinates = document.getElementById('locationList');
+                        var entry = document.createElement('li'); // a list element to be added to the ordered list
+                        entry.appendChild(document.createTextNode(displayPCtoAddress));
+                        oListCoordinates.appendChild(entry);
+              
+                        } //end if
+                    } // end for
+
+          
+              console.log(returnArr);
+                    
+              return returnArr;  
+
+            });   
+            
+        } //end searchArray()
+
+        function errData(err){
+            console.log('Error!')
+            console.log(err)
+        }
+
+    </script>
+</html>
