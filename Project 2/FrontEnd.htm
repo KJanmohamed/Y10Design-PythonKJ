@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!-- saved from url=(0094)file:///Users/kalen.janmohamed/Desktop/Git%20Repo/Y10Design-PythonKJ/Project%202/FrontEnd.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>.gm-err-container{height:100%;width:100%;display:table;background-color:#e0e0e0;position:relative;left:0;top:0}.gm-err-content{border-radius:1px;padding-top:0;padding-left:10%;padding-right:10%;position:static;vertical-align:middle;display:table-cell}.gm-err-content a{color:#4285f4}.gm-err-icon{text-align:center}.gm-err-title{margin:5px;margin-bottom:20px;color:#616161;font-family:Roboto,Arial,sans-serif;text-align:center;font-size:24px}.gm-err-message{margin:5px;color:#757575;font-family:Roboto,Arial,sans-serif;text-align:center;font-size:12px}.gm-err-autocomplete{padding-left:20px;background-repeat:no-repeat;background-size:15px 15px}
+</style><style>.gm-style-pbc{transition:opacity ease-in-out;background-color:rgba(0,0,0,0.45);text-align:center}.gm-style-pbt{font-size:22px;color:white;font-family:Roboto,Arial,sans-serif;position:relative;margin:0;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}
+</style><style>.gm-style img{max-width: none;}.gm-style {font: 400 11px Roboto, Arial, sans-serif; text-decoration: none;}</style>
+<link rel="stylesheet" href="./FrontEnd_files/css">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+
+<style>
+body {font-family:'Lato';}
+
+#navbar {
+  list-style-type: none;
+  margin: 0px;
+  padding: 10px;
+  overflow: hidden;
+  background-color: #2196F3;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+#navbar li {
+  float: left;
+}
+#navbar li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 10px 100px;
+  text-decoration: none;
+}
+#navbar li a:hover {
+  background-color: #fff;
+}
+.active {
+  background-color: #57AB3A;
+}
+
+#fonttitle {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 20px;
+}
+
+#text1 {
+  text-align:center;
+  color: #333;
+  padding: 25px 16px
+  font-size: 15px;
+  width: 1300px;
+}
+#header {
+  text-align:center;
+  font-size: 25px;
+  color: #ffff;
+  background-color: #2D67C8;
+  padding: 10px 16px
+}
+/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+#map {
+height: 77%;
+width: 50%;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+height: 100%;
+margin: 0;
+padding: 0;
+}
+
+</style>
+<script type="text/javascript" charset="UTF-8" src="./FrontEnd_files/common.js"></script><script type="text/javascript" charset="UTF-8" src="./FrontEnd_files/util.js"></script><script type="text/javascript" charset="UTF-8" src="./FrontEnd_files/map.js"></script><script type="text/javascript" charset="UTF-8" src="./FrontEnd_files/marker.js"></script><script type="text/javascript" charset="UTF-8" src="./FrontEnd_files/overlay.js"></script><script type="text/javascript" charset="UTF-8" src="./FrontEnd_files/onion.js"></script><script type="text/javascript" charset="UTF-8" src="./FrontEnd_files/ViewportInfoService.GetViewportInfo"></script><script type="text/javascript" charset="UTF-8" src="./FrontEnd_files/AuthenticationService.Authenticate"></script></head>
+<body>
+
+<ul id="navbar">
+
+  <li><a class="active" href="file:///Users/kalen.janmohamed/Desktop/Git%20Repo/Y10Design-PythonKJ/Project%202/FrontEnd.html#contact"> EV TOP 10 </a></li>
+  <li><a style="padding:10px 274px" id="fonttitle"> E L E C T R O C I T Y   -   6 I X </a></li>
+  <li style="float:right"><a class="active" href="file:///Users/kalen.janmohamed/Desktop/Git%20Repo/Y10Design-PythonKJ/Project%202/FrontEnd.html#contact"> TESLA MODEL 3 </a></li>
+
+</ul>
+
+<p id="header"> PLEASE INPUT YOUR DESIRED POSTAL CODE: <input type="text1" id="newName" style=" height:20px; width: 65px;" value="Enter name"> </p>
+<center>
+<div id="map" style="position: relative; overflow: hidden;"><div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);"><div class="gm-err-container"><div class="gm-err-content"><div class="gm-err-icon"><img src="./FrontEnd_files/icon_error.png" draggable="false" style="user-select: none;"></div><div class="gm-err-title">Oops! Something went wrong.</div><div class="gm-err-message">This page didn't load Google Maps correctly. See the JavaScript console for technical details.</div></div></div></div></div>
+    <script>
+
+      function initMap() {
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: {lat: 43.651070, lng: -79.347015}
+        });
+
+        // Create an array of alphabetical characters used to label the markers.
+        var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+        // Add some markers to the map.
+        // Note: The code uses the JavaScript Array.prototype.map() method to
+        // create an array of markers based on a given "locations" array.
+        // The map() method here has nothing to do with the Google Maps API.
+        var markers = locations.map(function(location, i) {
+          return new google.maps.Marker({
+            position: location,
+            label: labels[i % labels.length]
+          });
+        });
+
+        // Add a marker clusterer to manage the markers.
+        var markerCluster = new MarkerClusterer(map, markers,
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+      }
+      var locations = [
+        {lat: -31.563910, lng: 147.154312},
+        {lat: -33.718234, lng: 150.363181},
+        {lat: -33.727111, lng: 150.371124},
+        {lat: -33.848588, lng: 151.209834},
+        {lat: -33.851702, lng: 151.216968},
+        {lat: -34.671264, lng: 150.863657},
+        {lat: -35.304724, lng: 148.662905},
+        {lat: -36.817685, lng: 175.699196},
+        {lat: -36.828611, lng: 175.790222},
+        {lat: -37.750000, lng: 145.116667},
+        {lat: -37.759859, lng: 145.128708},
+        {lat: -37.765015, lng: 145.133858},
+        {lat: -37.770104, lng: 145.143299},
+        {lat: -37.773700, lng: 145.145187},
+        {lat: -37.774785, lng: 145.137978},
+        {lat: -37.819616, lng: 144.968119},
+        {lat: -38.330766, lng: 144.695692},
+        {lat: -39.927193, lng: 175.053218},
+        {lat: -41.330162, lng: 174.865694},
+        {lat: -42.734358, lng: 147.439506},
+        {lat: -42.734358, lng: 147.501315},
+        {lat: -42.735258, lng: 147.438000},
+        {lat: -43.999792, lng: 170.463352}
+      ]
+    </script>
+    <script src="./FrontEnd_files/markerclusterer.js">
+    </script>
+    <script async="" defer="" src="./FrontEnd_files/js">
+    </script>
+</center>
+
+
+<div style="position: absolute; left: 0px; top: -2px; height: 1px; overflow: hidden; visibility: hidden; width: 1px;"><span style="position: absolute; font-size: 300px; width: auto; height: auto; margin: 0px; padding: 0px; font-family: Roboto, Arial, sans-serif;">BESbswy</span></div></body></html>

@@ -1,0 +1,36 @@
+
+<!-- Welcome to some sample code to control your Firebase Database -->
+<!-- HERE IS YOUR HTML TO SET UP YOUR PAGE -->
+<html>
+    <head>
+        
+    </head>
+    <body >
+            <h1 id="uid"></h1>
+
+            <input type="text" id="radius" value="Enter your radius here...">
+
+            <button onclick="setData()"> Calculate Area of Circle </button>
+
+            <!-- <button onclick="getData()">Get data</button> -->
+            
+            <p id="Area"></p>
+
+            <div id="info"></div>
+
+            
+    </body>
+    
+  
+    <script>
+       
+       // HERE IS THE FUNCTION TO SHOW HOW TO SET/OVERWRITE USER DATA
+        function setData() {
+          
+          var x = document.getElementById("radius").value;
+          document.getElementById("Area").innerHTML = x * x * 3.14;
+           
+        }
+        
+    </script>
+</html>
