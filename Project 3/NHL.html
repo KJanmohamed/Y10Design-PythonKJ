@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Ropa+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+<style>
+body {font-family:'Lato';}
+
+/* Place the navbar at the bottom of the page, and make it stick */
+.navbar {
+  background-color: #fff;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 97.5%;
+}
+
+/* Style the links inside the navigation bar */
+.navbar a {
+  float: left;
+  display: block;
+  color: #2196F3;
+  text-align: center;
+  text-decoration: none;
+  font-size: 25px;
+  padding: 18px 113.5px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+/* Change the color of links on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.navbar a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+#navbar {
+  list-style-type: none;
+  margin: 0px;
+  padding: 10px;
+  overflow: hidden;
+  background-color: #2196F3;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.logo-image{
+    width: 225px;
+    height: 225px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: -6px;
+    float:right;
+    padding-right:6.8%;
+}
+
+.logo-image1{
+    width: 225px;
+    height: 225px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: -6px;
+    float:left;
+    padding-right:6.8%;
+}
+#navbar li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 10px 100px;
+  text-decoration: none;
+}
+#navbar li a:hover {
+  background-color: #fff;
+}
+
+#fonttitle {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 25px;
+}
+
+#text {
+  text-align:center;
+  color: #fff;
+  padding: 10px 40px;
+  font-size: 20px;
+  width: 1300px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+#spacerblue {
+  text-align:center;
+  font-size: 25px;
+  color: #ffff;
+  background-color: #2196F3;
+  padding: 10px 16px
+}
+  #redspacer {
+  text-align:center;
+  font-size: 30px;
+  color: #e31e38;
+  background-color: #e31e38;
+  padding: 10px 16px
+}
+  #header {
+  text-align:center;
+  font-size: 30px;
+  color: #2196F3;
+  background-color: #fff;
+  padding: 10px 16px;
+  font-family: 'Righteous', cursive;
+}
+
+                                                    /* ANAHEIM DUCKS */
+  #Pducks {
+  text-align:center;
+  font-size: 30px;
+  color: #fff;
+  background-color: #F47A38;
+  padding: 10px 16px;
+  font-family: 'Righteous', cursive;
+}
+
+  #Sducks {
+  text-align:center;
+  color: #fff;
+  background-color: #B9975B;
+  padding: 20px 49px;
+  font-size: 20px;
+  width: 1300px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+                                                    /* ARIZONA COYOTES */
+  #Pyotes {
+  text-align:center;
+  font-size: 30px;
+  color: #fff;
+  background-color: #8C2633;
+  padding: 10px 16px;
+  font-family: 'Righteous', cursive;
+}
+
+  #Syotes {
+  text-align:center;
+  color: #fff;
+  background-color: #E2D6B5;
+  padding: 20px 49px;
+  font-size: 20px;
+  width: 1300px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+                                                    /* BOSTON BRUINS */
+  #Pbruins {
+  text-align:center;
+  font-size: 30px;
+  color: #fff;
+  background-color: #FFB81C;
+  padding: 10px 16px;
+  font-family: 'Righteous', cursive;
+}
+
+  #Sbruins {
+  text-align:center;
+  color: #fff;
+  background-color: #000000;
+  padding: 20px 49px;
+  font-size: 20px;
+  width: 1300px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+                                                    /* BUFFALO SABRES */
+  #Psabres {
+  text-align:center;
+  font-size: 30px;
+  color: #fff;
+  background-color: #002654;
+  padding: 10px 16px;
+  font-family: 'Righteous', cursive;
+}
+
+  #Ssabres {
+  text-align:center;
+  color: #fff;
+  background-color: #FCB514;
+  padding: 20px 49px;
+  font-size: 20px;
+  width: 1300px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+                                                    /* CALGARY FLAMES */
+  #Pflames {
+  text-align:center;
+  font-size: 30px;
+  color: #fff;
+  background-color: #C8102E;
+  padding: 10px 16px;
+  font-family: 'Righteous', cursive;
+}
+
+  #Sflames {
+  text-align:center;
+  color: #fff;
+  background-color: #F1BE48;
+  padding: 20px 49px;
+  font-size: 20px;
+  width: 1300px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+                                                    /* CAROLINA HURRICANES */
+  #Phurricanes {
+  text-align:center;
+  font-size: 30px;
+  color: #fff;
+  background-color: #CC0000;
+  padding: 10px 16px;
+  font-family: 'Righteous', cursive;
+}
+
+  #Shurricanes {
+  text-align:center;
+  color: #fff;
+  background-color: #000000;
+  padding: 20px 49px;
+  font-size: 20px;
+  width: 1300px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+                                                    /* CHICAGO BLACKHAWKS */
+  #Phawks {
+  text-align:center;
+  font-size: 30px;
+  color: #fff;
+  background-color: #CF0A2C;
+  padding: 10px 16px;
+  font-family: 'Righteous', cursive;
+}
+
+  #Shawks {
+  text-align:center;
+  color: #fff;
+  background-color: #000000;
+  padding: 20px 49px;
+  font-size: 20px;
+  width: 1300px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+                                                    /* COLORADO AVALANCHE */
+  #Pavs {
+  text-align:center;
+  font-size: 30px;
+  color: #fff;
+  background-color: #6F263D;
+  padding: 10px 16px;
+  font-family: 'Righteous', cursive;
+}
+
+  #Savs {
+  text-align:center;
+  color: #fff;
+  background-color: #236192;
+  padding: 20px 49px;
+  font-size: 20px;
+  width: 1300px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+                                                    /* COLUMBUS BLUE JACKETS */
+  #PBJ {
+  text-align:center;
+  font-size: 30px;
+  color: #fff;
+  background-color: #002654;
+  padding: 10px 16px;
+  font-family: 'Righteous', cursive;
+}
+
+  #SBJ {
+  text-align:center;
+  color: #fff;
+  background-color: #CE1126;
+  padding: 20px 49px;
+  font-size: 20px;
+  width: 1300px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+                                                    /* DALLAS STARS */
+  #Pstars {
+  text-align:center;
+  font-size: 30px;
+  color: #fff;
+  background-color: #006847;
+  padding: 10px 16px;
+  font-family: 'Righteous', cursive;
+}
+
+  #Sstars {
+  text-align:center;
+  color: #fff;
+  background-color: #8F8F8C;
+  padding: 20px 49px;
+  font-size: 20px;
+  width: 1300px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+                                                    /* DETROIT RED WINGS */
+  #Pwings {
+  text-align:center;
+  font-size: 30px;
+  color: #fff;
+  background-color: #CE1126;
+  padding: 10px 16px;
+  font-family: 'Righteous', cursive;
+}
+
+  #Swings {
+  text-align:center;
+  color: #000000;
+  background-color: #FFFFFF;
+  padding: 20px 49px;
+  font-size: 20px;
+  width: 1300px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+                                                    /* EDMONTON OILERS */
+  #Poilers {
+  text-align:center;
+  font-size: 30px;
+  color: #fff;
+  background-color: #041E42;
+  padding: 10px 16px;
+  font-family: 'Righteous', cursive;
+}
+
+  #Soilers {
+  text-align:center;
+  color: #fff;
+  background-color: #FF4C00;
+  padding: 20px 49px;
+  font-size: 20px;
+  width: 1300px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+                                                    /* FLORIDA PANTHERS */
+  #Ppanthers {
+  text-align:center;
+  font-size: 30px;
+  color: #fff;
+  background-color: #041E42;
+  padding: 10px 16px;
+  font-family: 'Righteous', cursive;
+}
+
+  #Spanthers {
+  text-align:center;
+  color: #fff;
+  background-color: #C8102E;
+  padding: 20px 49px;
+  font-size: 20px;
+  width: 1300px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+
+                                                    /* LA KINGS */
+  #Pkings {
+  text-align:center;
+  font-size: 30px;
+  color: #fff;
+  background-color: #111111;
+  padding: 10px 16px;
+  font-family: 'Righteous', cursive;
+}
+
+  #Skings {
+  text-align:center;
+  color: #fff;
+  background-color: #A2AAAD;
+  padding: 20px 49px;
+  font-size: 20px;
+  width: 1300px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+                                                    /* MINNISOTA WILD */
+  #Pwild {
+  text-align:center;
+  font-size: 30px;
+  color: #fff;
+  background-color: #154734;
+  padding: 10px 16px;
+  font-family: 'Righteous', cursive;
+}
+
+  #Swild {
+  text-align:center;
+  color: #fff;
+  background-color: #DDCBA4;
+  padding: 20px 49px;
+  font-size: 20px;
+  width: 1300px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+                                                    /* MONTREAL CANADIENS */
+  #Pcanadiens {
+  text-align:center;
+  font-size: 30px;
+  color: #fff;
+  background-color: #AF1E2D;
+  padding: 10px 16px;
+  font-family: 'Righteous', cursive;
+}
+
+  #Scanadiens {
+  text-align:center;
+  color: #fff;
+  background-color: #192168;
+  padding: 20px 49px;
+  font-size: 20px;
+  width: 1300px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+                                                    /* NASHVILLE PREDATORS */
+  #Ppreds {
+  text-align:center;
+  font-size: 30px;
+  color: #fff;
+  background-color: #FFB81C;
+  padding: 10px 16px;
+  font-family: 'Righteous', cursive;
+}
+
+  #Spreds {
+  text-align:center;
+  color: #fff;
+  background-color: #041E42;
+  padding: 20px 49px;
+  font-size: 20px;
+  width: 1300px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+                                                    /* NJ DEVILS */
+  #Pdevils {
+  text-align:center;
+  font-size: 30px;
+  color: #fff;
+  background-color: #CE1126;
+  padding: 10px 16px;
+  font-family: 'Righteous', cursive;
+}
+
+  #Sdevils {
+  text-align:center;
+  color: #fff;
+  background-color: #000000;
+  padding: 20px 49px;
+  font-size: 20px;
+  width: 1300px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+                                                    /* NY ISLANDERS */
+  #Pisles {
+  text-align:center;
+  font-size: 30px;
+  color: #fff;
+  background-color: #00539B;
+  padding: 10px 16px;
+  font-family: 'Righteous', cursive;
+}
+
+  #Sisles {
+  text-align:center;
+  color: #fff;
+  background-color: #F47D30;
+  padding: 20px 49px;
+  font-size: 20px;
+  width: 1300px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+                                                    /* NY RANGERS */
+  #Prangers {
+  text-align:center;
+  font-size: 30px;
+  color: #fff;
+  background-color: #0038A8;
+  padding: 10px 16px;
+  font-family: 'Righteous', cursive;
+}
+
+  #Srangers {
+  text-align:center;
+  color: #fff;
+  background-color: #CE1126;
+  padding: 20px 49px;
+  font-size: 20px;
+  width: 1300px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+                                                    /* OTTAWA SENATORS */
+  #Psens {
+  text-align:center;
+  font-size: 30px;
+  color: #fff;
+  background-color: #C52032;
+  padding: 10px 16px;
+  font-family: 'Righteous', cursive;
+}
+
+  #Ssens {
+  text-align:center;
+  color: #fff;
+  background-color: #C2912C;
+  padding: 20px 49px;
+  font-size: 20px;
+  width: 1300px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+                                                    /* PHILLY FLYERS */
+  #Pflyers {
+  text-align:center;
+  font-size: 30px;
+  color: #fff;
+  background-color: #F74902;
+  padding: 10px 16px;
+  font-family: 'Righteous', cursive;
+}
+
+  #Sflyers {
+  text-align:center;
+  color: #fff;
+  background-color: #000000;
+  padding: 20px 49px;
+  font-size: 20px;
+  width: 1300px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+                                                    /* PITTSBURG PENGUINS */
+  #Ppens {
+  text-align:center;
+  font-size: 30px;
+  color: #fff;
+  background-color: #000000;
+  padding: 10px 16px;
+  font-family: 'Righteous', cursive;
+}
+
+  #Spens {
+  text-align:center;
+  color: #fff;
+  background-color: #FCB514;
+  padding: 20px 49px;
+  font-size: 20px;
+  width: 1300px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+                                                    /* ST. LOUIS BLUES */
+  #Pblues {
+  text-align:center;
+  font-size: 30px;
+  color: #fff;
+  background-color: #002F87;
+  padding: 10px 16px;
+  font-family: 'Righteous', cursive;
+}
+
+  #Sblues {
+  text-align:center;
+  color: #fff;
+  background-color: #FCB514;
+  padding: 20px 49px;
+  font-size: 20px;
+  width: 1300px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+                                                    /* SJ SHARKS */
+  #Psharks {
+  text-align:center;
+  font-size: 30px;
+  color: #fff;
+  background-color: #000000;
+  padding: 10px 16px;
+  font-family: 'Righteous', cursive;
+}
+
+  #Ssharks {
+  text-align:center;
+  color: #fff;
+  background-color: #006D75;
+  padding: 20px 49px;
+  font-size: 20px;
+  width: 1300px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+
+                                                    /* TB LIGHTNING */
+  #Plights {
+  text-align:center;
+  font-size: 30px;
+  color: #fff;
+  background-color: #002868;
+  padding: 10px 16px;
+  font-family: 'Righteous', cursive;
+}
+
+  #Slights {
+  text-align:center;
+  color: #000000;
+  background-color: #FFFFFF;
+  padding: 20px 49px;
+  font-size: 20px;
+  width: 1300px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+                                                    /* TORONTO MAPLE LEAFS */
+  #Pleafs {
+  text-align:center;
+  font-size: 30px;
+  color: #fff;
+  background-color: #00205B;
+  padding: 10px 16px;
+  font-family: 'Righteous', cursive;
+}
+
+  #Sleafs {
+  text-align:center;
+  color: #00205B;
+  background-color: #FFFFFF;
+  padding: 20px 49px;
+  font-size: 20px;
+  width: 1300px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+                                                    /* VANCOUVER CANUCKS */
+  #Pnucks {
+  text-align:center;
+  font-size: 30px;
+  color: #fff;
+  background-color: #00205B;
+  padding: 10px 16px;
+  font-family: 'Righteous', cursive;
+}
+
+  #Snucks {
+  text-align:center;
+  color: #fff;
+  background-color: #00843D;
+  padding: 20px 49px;
+  font-size: 20px;
+  width: 1300px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+                                                    /* VEGAS GOLDEN KNIGHTS */
+  #Pknights {
+  text-align:center;
+  font-size: 30px;
+  color: #fff;
+  background-color: #B4975A;
+  padding: 10px 16px;
+  font-family: 'Righteous', cursive;
+}
+
+  #Sknights {
+  text-align:center;
+  color: #fff;
+  background-color: #333F42;
+  padding: 20px 49px;
+  font-size: 20px;
+  width: 1300px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+                                                    /* WASHINGTON CAPITALS*/
+  #Pcaps {
+  text-align:center;
+  font-size: 30px;
+  color: #fff;
+  background-color: #041E42;
+  padding: 10px 16px;
+  font-family: 'Righteous', cursive;
+}
+
+  #Scaps {
+  text-align:center;
+  color: #fff;
+  background-color: #C8102E;
+  padding: 20px 49px;
+  font-size: 20px;
+  width: 1300px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+                                                    /* WINNIPEG JETS */
+  #Pjets {
+  text-align:center;
+  font-size: 30px;
+  color: #fff;
+  background-color: #041E42;
+  padding: 10px 16px;
+  font-family: 'Righteous', cursive;
+}
+
+  #Sjets {
+  text-align:center;
+  color: #fff;
+  background-color: #55565A;
+  padding: 20px 49px;
+  font-size: 20px;
+  width: 1300px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+
+
+</style>
+</head>
+<body>
+
+<ul id="navbar">
+
+<a class="navbar-brand" href="">
+      <div class="logo-image">
+            <img src="https://forum.nhl94.com/uploads/monthly_2018_04/vegas_cup_winners.gif.349c01a8f06072708d1473caa6a0a7f0.gif" class="img-fluid">
+      </div>
+</a>
+ <a class="navbar-brand" href="">
+      <div class="logo-image1">
+            <img src="https://forum.nhl94.com/uploads/monthly_2018_04/vegas_cup_winners.gif.349c01a8f06072708d1473caa6a0a7f0.gif" class="img-fluid">
+      </div>
+</a>
+
+ <li ><a id="fonttitle" >  </a> </li> 
+ <li ><a id="fonttitle" >  </a> </li> 
+ <li ><a id="fonttitle" >  </a> </li> 
+
+ 
+ <li ><a id="fonttitle" > H O W - T O - H O C K E Y </a> </li>
+ <li ><a id="fonttitle" > NHL </a> </li>
+<p id="spacerblue" >  </p> 
+<p id="spacerblue" >  </p> 
+<p id="redspacer" ></p>  
+
+<p id="header" > WHAT IS THE NHL? </p>
+
+<p id="text" > The National Hockey League (NHL; French: Ligue nationale de hockey—LNH) is a professional ice hockey league in North America, currently comprising 31 teams: 24 in the United States and seven in Canada. The NHL is considered to be the premier professional ice hockey league in the world, and one of the major professional sports leagues in the United States and Canada. The Stanley Cup, the oldest professional sports trophy in North America, is awarded annually to the league playoff champion at the end of each season. </p> 
+
+<p id="text" > BELOW THIS WILL BE A DESCRIPTION OF EACH HOCKEY TEAM INCLUDING THEIR HOST CITY, ARENA, POSITION THEY ENDED UP IN THE 2018-2019 SEASON, YEAR ENTERED, STANLEY CUPS WON, AND KEY PLAYERS </p> 
+
+<p id="redspacer" ></p> 
+
+
+
+                                                          <!-- NHL TEAMS -->
+
+
+
+                                                         <!-- ANAHEIM DUCKS -->
+
+<p id="Pducks" > ANAHEIM DUCKS </p>
+
+<center>
+<img src="https://cdn.bleacherreport.net/images/team_logos/328x328/anaheim_ducks.png" class="img-fluid">
+</center>
+
+<p id="Sducks" > HOST CITY: Anaheim, California <br> ARENA: Honda Center <br> DIVISION, CONFERENCE: Pacific, Western<br> POSITION FINISHED 2018-2019: 24TH<br> YEAR ENTERED: 1993 <br> STANLEY CUPS WON: 1 <br> KEY PLAYERS: Adam Henrique, Rickard Rakell, Ryan Getzlaf </p> 
+
+<p id="redspacer" ></p>
+
+
+                                                         <!-- ARIZONA COYOTES -->
+                                                         
+<p id="Pyotes" > ARIZONA COYOTES </p>
+
+<center>
+<img src="https://cdn.bleacherreport.net/images/team_logos/328x328/arizona_coyotes.png" class="img-fluid">
+</center>
+
+<p id="Syotes" > HOST CITY: Glendale, Arizona <br> ARENA: Gila River Arena <br> DIVISION, CONFERENCE: Pacific, Western<br> POSITION FINISHED 2018-2019: 18TH<br> YEAR ENTERED: 1979 <br> STANLEY CUPS WON: 0<br> KEY PLAYERS: Taylor Hall, Phil Kessel, Oliver Ekman-Larsson </p> 
+
+<p id="redspacer" ></p>
+
+
+                                                         <!-- BOSTON BRUINS -->
+                                                         
+<p id="Pbruins" > BOSTON BRUINS </p>
+
+<center>
+<img src="https://cdn.bleacherreport.net/images/team_logos/328x328/boston_bruins.png" class="img-fluid">
+</center>
+
+<p id="Sbruins" > HOST CITY: Boston, Massachusetts <br> ARENA: TD Garden <br>DIVISION, CONFERENCE: Atlantic, Eastern<br> POSITION FINISHED 2018-2019: 3RD<br> YEAR ENTERED: 1924<br> STANLEY CUPS WON: 6<br> KEY PLAYERS: Brad Marchand, Patrice Bergeron, Tukka Rask, David Pastrnak, Zdeno Chara </p> 
+
+<p id="redspacer" ></p>
+
+
+                                                         <!-- BUFFALO SABRES -->
+                                                         
+<p id="Psabres" > BUFFALO SABRES </p>
+
+<center>
+<img src="https://cdn.bleacherreport.net/images/team_logos/328x328/buffalo_sabres.png" class="img-fluid">
+</center>
+
+<p id="Ssabres" > HOST CITY: Buffalo, New York <br> ARENA: KeyBank Center <br>DIVISION, CONFERENCE: Atlantic, Eastern<br> POSITION FINISHED 2018-2019: 27TH<br> YEAR ENTERED: 1970<br> STANLEY CUPS WON: 0<br> KEY PLAYERS:  Jack Eichel, Rasmus Dahlin, Sam Reinhart</p> 
+
+<p id="redspacer" ></p>
+
+
+                                                         <!-- CALGARY FLAMES -->
+                                                         
+<p id="Pflames" > CALGARY FLAMES </p>
+
+<center>
+<img src="https://cdn.bleacherreport.net/images/team_logos/328x328/calgary_flames.png" class="img-fluid">
+</center>
+
+<p id="Sflames" > HOST CITY: Calgary, Alberta <br> ARENA: Scotiabank Saddledome <br>DIVISION, CONFERENCE: Pacific, Western<br> POSITION FINISHED 2018-2019: 2ND<br> YEAR ENTERED: 1972<br> STANLEY CUPS WON: 1<br> KEY PLAYERS: Matthew Tkachuk, Johnny Gaudreau, Mark Giordano</p> 
+
+<p id="redspacer" ></p>
+
+
+                                                         <!-- CAROLINA HURRICANES -->
+                                                         
+<p id="Phurricanes" > CAROLINA HURRICANES </p>
+
+<center>
+<img src="https://cdn.bleacherreport.net/images/team_logos/328x328/carolina_hurricanes.png" class="img-fluid">
+</center>
+
+<p id="Shurricanes" > HOST CITY: Raleigh, North Carolina <br> ARENA: PNC Arena <br>DIVISION, CONFERENCE: Metropolitian, Eastern<br> POSITION FINISHED 2018-2019: 11TH<br> YEAR ENTERED: 1972<br> STANLEY CUPS WON: 1<br> KEY PLAYERS: Sebastian Aho, Andrei Svechnikov, Jake Gardiner </p> 
+
+<p id="redspacer" ></p>
+
+
+                                                         <!-- CHICAGO BLACKHAWKS -->
+                                                         
+<p id="Phawks" > CHICAGO BLACKHAWKS </p>
+
+<center>
+<img src="https://cdn.bleacherreport.net/images/team_logos/328x328/chicago_blackhawks.png" class="img-fluid">
+</center>
+
+<p id="Shawks" > HOST CITY: Chicago, Illinois <br> ARENA: United Center <br>DIVISION, CONFERENCE: Central, Western<br> POSITION FINISHED 2018-2019: 20TH<br> YEAR ENTERED: 1972<br> STANLEY CUPS WON: 1926<br> KEY PLAYERS: Patrick Kane, Jonathan Toews, Dominik Kubalik </p> 
+
+<p id="redspacer" ></p>
+
+
+                                                         <!-- COLORADO AVALANCHE -->
+                                                         
+<p id="Pavs" > COLORADO AVALANCHE </p>
+
+<center>
+<img src="https://cdn.bleacherreport.net/images/team_logos/328x328/colorado_avalanche.png" class="img-fluid">
+</center>
+
+<p id="Savs" > HOST CITY: Denver, Colorado <br> ARENA: Pepsi Center <br>DIVISION, CONFERENCE: Central, Western<br> POSITION FINISHED 2018-2019: 17TH<br> YEAR ENTERED: 1972<br> STANLEY CUPS WON: 2<br> KEY PLAYERS: Nathan MacKinnon, Cale Makar, Michael Hutchinson </p> 
+
+<p id="redspacer" ></p>
+
+
+                                                         <!-- COLUMBUS BLUE JACKETS -->
+                                                         
+<p id="PBJ" > COLUMBUS BLUE JACKETS </p>
+
+<center>
+<img src="https://cdn.bleacherreport.net/images/team_logos/328x328/columbus_blue_jackets.png" class="img-fluid">
+</center>
+
+<p id="SBJ" > HOST CITY: Columbus, Ohio <br> ARENA: Nationwide Arena <br>DIVISION, CONFERENCE: Metropolitian, Eastern<br> POSITION FINISHED 2018-2019: 13TH<br> YEAR ENTERED: 2000<br> STANLEY CUPS WON: 0<br> KEY PLAYERS: Nick Foligno, Pierre-Luc Dubois, Joonas Korpisalo</p> 
+
+<p id="redspacer" ></p>
+
+
+                                                         <!-- DALLAS STARS -->
+                                                         
+<p id="Pstars" > DALLAS STARS </p>
+
+<center>
+<img src="https://cdn.bleacherreport.net/images/team_logos/328x328/dallas_stars.png" class="img-fluid">
+</center>
+
+<p id="Sstars" > HOST CITY: Dallas, Texas <br> ARENA: American Airlines Center <br>DIVISION, CONFERENCE: Central, Western<br> POSITION FINISHED 2018-2019: 15TH<br> YEAR ENTERED: 1967<br> STANLEY CUPS WON: 1<br> KEY PLAYERS: Tyler Seguin, Jamie Benn, Ben Bishop </p> 
+
+<p id="redspacer" ></p>
+
+
+                                                         <!-- DETROIT RED WINGS -->
+                                                         
+<p id="Pwings" > DETROIT RED WINGS </p>
+
+<center>
+<img src="https://cdn.bleacherreport.net/images/team_logos/328x328/detroit_red_wings.png" class="img-fluid">
+</center>
+
+<p id="Swings" > HOST CITY: Detroit, Michigan <br> ARENA: Little Caesars Arena <br>DIVISION, CONFERENCE: Atlantic, Eastern<br> POSITION FINISHED 2018-2019: 28TH<br> YEAR ENTERED: 1926<br> STANLEY CUPS WON: 11<br> KEY PLAYERS: Dylan Larkin, Filip Zadina, Alexis Lafreniere </p> 
+
+<p id="redspacer" ></p>
+
+
+                                                         <!-- EDMONTON OILERS -->
+                                                         
+<p id="Poilers" > EDMONTON OILERS </p>
+
+<center>
+<img src="https://cdn.bleacherreport.net/images/team_logos/328x328/edmonton_oilers.png" class="img-fluid">
+</center>
+
+<p id="Soilers" > HOST CITY: Edmonton, Alberta <br> ARENA: Rogers Place <br>DIVISION, CONFERENCE: Pacific, Western<br> POSITION FINISHED 2018-2019: 25TH<br> YEAR ENTERED: 1972<br> STANLEY CUPS WON: 5<br> KEY PLAYERS: Connor McDavid, Leon Draisaitl, Ryan Nugent-Hopkins</p> 
+
+<p id="redspacer" ></p>
+
+
+                                                         <!-- FLORIDA PANTHERS -->
+                                                         
+<p id="Ppanthers" > FLORIDA PANTHERS </p>
+
+<center>
+<img src="https://cdn.bleacherreport.net/images/team_logos/328x328/florida_panthers.png" class="img-fluid">
+</center>
+
+<p id="Spanthers" > HOST CITY: Sunrise, Florida <br> ARENA: BB&T Center <br>DIVISION, CONFERENCE: Atlantic, Eastern<br> POSITION FINISHED 2018-2019: 19th<br> YEAR ENTERED: 1993<br> STANLEY CUPS WON: 0<br> KEY PLAYERS: Jonathan Huberdeau, Aleksander Barkov, Keith Yandle, Sergei Bobrovsky </p> 
+
+<p id="redspacer" ></p>
+
+
+                                                         <!-- LA KINGS -->
+                                                         
+<p id="Pkings" > Los Angeles Kings </p>
+
+<center>
+<img src="https://cdn.bleacherreport.net/images/team_logos/328x328/los_angeles_kings.png" class="img-fluid">
+</center>
+
+<p id="Skings" > HOST CITY: Los Angeles, California <br> ARENA: Staples Center <br>DIVISION, CONFERENCE: Pacific, Western<br> POSITION FINISHED 2018-2019: 30TH<br> YEAR ENTERED: 1967<br> STANLEY CUPS WON: 2<br> KEY PLAYERS: Anze Kopitar, Drew Doughty, Jonathan Quick </p> 
+
+<p id="redspacer" ></p>
+
+
+                                                         <!-- MINNESOTA WILD -->
+                                                         
+<p id="Pwild" > MINNESOTA WILD </p>
+
+<center>
+<img src="https://cdn.bleacherreport.net/images/team_logos/328x328/minnesota_wild.png" class="img-fluid">
+</center>
+
+<p id="Swild" > HOST CITY: Saint Paul, Minnesota <br> ARENA: Xcel Energy Center <br>DIVISION, CONFERENCE: Central, Western<br> POSITION FINISHED 2018-2019: 21ST<br> YEAR ENTERED: 2000<br> STANLEY CUPS WON: 0<br> KEY PLAYERS: Kevin Fiala, Eric Staal, Ryan Suter</p> 
+
+<p id="redspacer" ></p>
+
+
+                                                         <!-- MONTREAL CANADIENS -->
+                                                         
+<p id="Pcanadiens" > MONTREAL CANADIENS </p>
+
+<center>
+<img src="https://cdn.bleacherreport.net/images/team_logos/328x328/montreal_canadiens.png" class="img-fluid">
+</center>
+
+<p id="Scanadiens" > HOST CITY: Montreal, Quebec <br> ARENA: Bell Centre <br>DIVISION, CONFERENCE: Atlantic, Eastern<br> POSITION FINISHED 2018-2019: 14TH<br> YEAR ENTERED: 1917<br> STANLEY CUPS WON: 24<br> KEY PLAYERS: Max Domi, Brendan Gallagher, Shea Weber, Carey Price </p> 
+
+<p id="redspacer" ></p>
+
+
+                                                         <!-- NASHVILLE PREDATORS -->
+                                                         
+<p id="Ppreds" > NASHVILLE PREDATORS </p>
+
+<center>
+<img src="https://cdn.bleacherreport.net/images/team_logos/328x328/nashville_predators.png" class="img-fluid">
+</center>
+
+<p id="Spreds" > HOST CITY: Nashville, Tennessee <br> ARENA: Bridgestone Arena <br>DIVISION, CONFERENCE: Central, Western<br> POSITION FINISHED 2018-2019: 8TH<br> YEAR ENTERED: 1998<br> STANLEY CUPS WON: 0<br> KEY PLAYERS: Roman Josi, Filip Forsberg, Matt Duchene, Ryan Ellis </p> 
+
+<p id="redspacer" ></p>
+
+
+                                                         <!-- NEW JERSEY DEVILS -->
+                                                         
+<p id="Pdevils" > New Jersey Devils </p>
+
+<center>
+<img src="https://cdn.bleacherreport.net/images/team_logos/328x328/new_jersey_devils.png" class="img-fluid">
+</center>
+
+<p id="Sdevils" > HOST CITY: Newark, New Jersey <br> ARENA: Prudential Center<br>DIVISION, CONFERENCE: Metropolitian, Eastern<br> POSITION FINISHED 2018-2019: 29TH<br> YEAR ENTERED: 1974<br> STANLEY CUPS WON: 3<br> KEY PLAYERS: Nico Hischier, Jack Hughes, P.K. Subban </p> 
+
+<p id="redspacer" ></p>
+
+
+                                                         <!-- NEW YORK ISLANDERS -->
+                                                         
+<p id="Pisles" > NEW YORK ISLANDERS </p>
+
+<center>
+<img src="https://cdn.bleacherreport.net/images/team_logos/328x328/new_york_islanders.png" class="img-fluid">
+</center>
+
+<p id="Sisles" > HOST CITY: New York City, New York AND Uniondale, New York <br> ARENA: Barclays Center AND Nassau Coliseum <br>DIVISION, CONFERENCE: Metropolitian, Eastern<br> POSITION FINISHED 2018-2019: 5TH<br> YEAR ENTERED: 1972<br> STANLEY CUPS WON: 4<br> KEY PLAYERS: Mathew Barzal, Anders Lee, Jean-Gabriel Pageau </p> 
+
+<p id="redspacer" ></p>
+
+
+                                                         <!-- NEW YORK RANGERS -->
+                                                         
+<p id="Prangers" > NEW YORK RANGERS </p>
+
+<center>
+<img src="https://cdn.bleacherreport.net/images/team_logos/328x328/new_york_rangers.png" class="img-fluid">
+</center>
+
+<p id="Srangers" > HOST CITY: New York City, New York <br> ARENA: Madison Square Garden  <br>DIVISION, CONFERENCE: Metropolitian, Eastern<br> POSITION FINISHED 2018-2019: 26TH<br> YEAR ENTERED: 1926<br> STANLEY CUPS WON: 4<br> KEY PLAYERS: Artemi Panarin, Mika Zibanejad, Kaapo Kakko, Igor Shesterkin </p> 
+
+<p id="redspacer" ></p>
+
+
+                                                         <!-- OTTAWA SENATORS -->
+                                                         
+<p id="Psens" > OTTAWA SENATORS </p>
+
+<center>
+<img src="https://cdn.bleacherreport.net/images/team_logos/328x328/ottawa_senators.png" class="img-fluid">
+</center>
+
+<p id="Ssens" > HOST CITY: Ottawa, Ontario <br> ARENA: Canadian Tire Centre <br>DIVISION, CONFERENCE: Atlantic, Eastern<br> POSITION FINISHED 2018-2019: 31ST<br> YEAR ENTERED: 1992<br> STANLEY CUPS WON: 10<br> KEY PLAYERS: Brady Tkachuk, Bobby Ryan, Anthony Duclair</p> 
+
+<p id="redspacer" ></p>
+
+
+                                                         <!-- PHILADELPHIA FLYERS -->
+                                                         
+<p id="Pflyers" > PHILADELPHIA FLYERS </p>
+
+<center>
+<img src="https://cdn.bleacherreport.net/images/team_logos/328x328/philadelphia_flyers.png" class="img-fluid">
+</center>
+
+<p id="Sflyers" > HOST CITY: Philadelphia, Pennsylvania <br> ARENA: Wells Fargo Center <br>DIVISION, CONFERENCE: Metropolitian, Eastern<br> POSITION FINISHED 2018-2019: 22ND<br> YEAR ENTERED: 1967<br> STANLEY CUPS WON: 2<br> KEY PLAYERS: Travis Konecny, Sean Couturier, Jakub Voracek, Claude Giroux, Carter Hart </p> 
+
+<p id="redspacer" ></p>
+
+
+                                                         <!-- PITTSBURGH PENGUINS -->
+                                                         
+<p id="Ppens" > PITTSBURGH PENGUINS </p>
+
+<center>
+<img src="https://cdn.bleacherreport.net/images/team_logos/328x328/pittsburgh_penguins.png" class="img-fluid">
+</center>
+
+<p id="Spens" > HOST CITY: Pittsburgh, Pennsylvania <br> ARENA: PPG Paints Arena <br>DIVISION, CONFERENCE: Metropolitian, Eastern<br> POSITION FINISHED 2018-2019: 9TH<br> YEAR ENTERED: 1967<br> STANLEY CUPS WON: 5<br> KEY PLAYERS: Sidney Crosby, Evgeni Malkin, Kris Letang </p> 
+
+<p id="redspacer" ></p>
+
+
+                                                         <!-- SAN JOSE SHARKS -->
+                                                         
+<p id="Psharks" > SAN JOSE SHARKS </p>
+
+<center>
+<img src="https://cdn.bleacherreport.net/images/team_logos/328x328/san_jose_sharks.png" class="img-fluid">
+</center>
+
+<p id="Ssharks" > HOST CITY: San Jose, California <br> ARENA: SAP Center <br>DIVISION, CONFERENCE: Pacific, Western<br> POSITION FINISHED 2018-2019: 6TH<br> YEAR ENTERED: 1991<br> STANLEY CUPS WON: 0<br> KEY PLAYERS: Brent Burns, Erik Karlsson, Joe Thornton </p> 
+
+<p id="redspacer" ></p>
+
+
+                                                         <!-- ST. LOUIS BLUES -->
+                                                         
+<p id="Pblues" > ST. LOUIS BLUES </p>
+
+<center>
+<img src="https://cdn.bleacherreport.net/images/team_logos/328x328/st_louis_blues.png" class="img-fluid">
+</center>
+
+<p id="Sblues" > HOST CITY: St. Louis, Missouri <br> ARENA: Enterprise Center <br>DIVISION, CONFERENCE: Central, Western<br> POSITION FINISHED 2018-2019: 12TH<br> YEAR ENTERED: 1967<br> STANLEY CUPS WON: 1<br> KEY PLAYERS: Vladimir Tarasenko, Ryan O'Reilly, Alex Pietrangelo, Jordan Binnington </p> 
+
+<p id="redspacer" ></p>
+
+
+                                                         <!-- TAMPA BAY LIGHTNING -->
+                                                         
+<p id="Plights" > TAMPA BAY LIGHTNING </p>
+
+<center>
+<img src="https://cdn.bleacherreport.net/images/team_logos/328x328/tampa_bay_lightning.png" class="img-fluid">
+</center>
+
+<p id="Slights" > HOST CITY: Tampa, Florida <br> ARENA: Amalie Arena <br>DIVISION, CONFERENCE: Atlantic, Eastern<br> POSITION FINISHED 2018-2019: 1ST<br> YEAR ENTERED: 1992<br> STANLEY CUPS WON: 1<br> KEY PLAYERS: Nikita Kucherov, Steven Stamkos, Victor Hedman, Andrei Vasilevskiy </p> 
+
+<p id="redspacer" ></p>
+
+
+                                                         <!-- TORONTO MAPLE LEAFS -->
+                                                         
+<p id="Pleafs" > TORONTO MAPLE LEAFS </p>
+
+<center>
+<img src="https://cdn.bleacherreport.net/images/team_logos/328x328/toronto_maple_leafs.png" class="img-fluid">
+</center>
+
+<p id="Sleafs" > HOST CITY: Toronto, Ontario <br> ARENA: Scotiabank Arena <br>DIVISION, CONFERENCE: Atlantic, Eastern<br> POSITION FINISHED 2018-2019: 7TH<br> YEAR ENTERED: 1917<br> STANLEY CUPS WON: 13<br> KEY PLAYERS: Auston Matthews, Mitchell Marner, John Tavares, William Nylander, Morgan Rielly, Frederik Andersen </p> 
+
+<p id="redspacer" ></p>
+
+
+                                                         <!-- VANCOUVER CANUCKS -->
+                                                         
+<p id="Pnucks" > VANCOUVER CANUCKS </p>
+
+<center>
+<img src="https://cdn.bleacherreport.net/images/team_logos/328x328/vancouver_canucks.png" class="img-fluid">
+</center>
+
+<p id="Snucks" > HOST CITY: Vancouver, British Columbia <br> ARENA: Rogers Arena <br>DIVISION, CONFERENCE: Pacific, Western<br> POSITION FINISHED 2018-2019: 23RD<br> YEAR ENTERED: 1945<br> STANLEY CUPS WON: 0<br> KEY PLAYERS: Elias Pettersson, Quinn Hughes, Brock Boeser, Jacob Markstrom </p> 
+
+<p id="redspacer" ></p>
+
+
+                                                         <!-- VEGAS GOLDEN KNIGHTS -->
+                                                         
+<p id="Pknights" > VEGAS GOLDEN KNIGHTS </p>
+
+<center>
+<img src="https://cdn.bleacherreport.net/images/team_logos/328x328/vegas_golden_knights.png" class="img-fluid">
+</center>
+
+<p id="Sknights" > HOST CITY: Paradise, Nevada <br> ARENA: T-Mobile Arena <br>DIVISION, CONFERENCE: Pacific, Western<br> POSITION FINISHED 2018-2019: 16TH<br> YEAR ENTERED: 2017<br> STANLEY CUPS WON: 0<br> KEY PLAYERS: Max Pacioretty, Mark Stone, Marc-Andre Fleury </p> 
+
+<p id="redspacer" ></p>
+
+
+                                                         <!-- WASHINGTON CAPITALS -->
+                                                         
+<p id="Pcaps" > WASHINGTON CAPITALS </p>
+
+<center>
+<img src="https://cdn.bleacherreport.net/images/team_logos/328x328/washington_capitals.png" class="img-fluid">
+</center>
+
+<p id="Scaps" > HOST CITY: Washington, D.C. <br> ARENA: Capital One Arena <br>DIVISION, CONFERENCE: Metropolitian, Eastern<br> POSITION FINISHED 2018-2019: 4TH<br> YEAR ENTERED: 1974<br> STANLEY CUPS WON: 1<br> KEY PLAYERS: John Carlson, Alex Ovechkin, Nicklas Backstrom, Evgeny Kuznetsov, Ilya Samsonov </p> 
+
+<p id="redspacer" ></p>
+
+
+                                                         <!-- WINNIPEG JETS -->
+                                                         
+<p id="Pjets" > WINNIPEG JETS </p>
+
+<center>
+<img src="https://cdn.bleacherreport.net/images/team_logos/328x328/winnipeg_jets.png" class="img-fluid">
+</center>
+
+<p id="Sjets" > HOST CITY: Winnipeg, Manitoba <br> ARENA: Bell MTS Place <br>DIVISION, CONFERENCE: Central, Western<br> POSITION FINISHED 2018-2019: 10TH<br> YEAR ENTERED: 1999<br> STANLEY CUPS WON: 3<br> KEY PLAYERS: Kyle Connor, Mark Scheifele, Blake Wheeler, Patrik Laine, Connor Hellebuyck </p> 
+
+<p id="redspacer" ></p>
+
+
+<div class="navbar">
+  <a href="file:///Users/kalen.janmohamed/Desktop/Git%20Repo/Y10Design-PythonKJ/Project%203/HomePage.html">Homepage</a>
+  <a href="file:///Users/kalen.janmohamed/Desktop/Git%20Repo/Y10Design-PythonKJ/Project%203/History.html">History</a>
+  <a href="file:///Users/kalen.janmohamed/Desktop/Git%20Repo/Y10Design-PythonKJ/Project%203/Infractions.html">Infractions</a>
+  <a href="file:///Users/kalen.janmohamed/Desktop/Git%20Repo/Y10Design-PythonKJ/Project%203/HockeyStatsCalculator.html">Hockey Stats Calculator</a>
+</div>
+
+</body>
+</html>
+
