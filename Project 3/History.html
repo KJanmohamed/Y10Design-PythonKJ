@@ -1,0 +1,483 @@
+ <!DOCTYPE html>
+<html>
+	<head>
+		<link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Ropa+Sans&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+		<style>
+                                                              /* CSS */
+
+		/* Media Queries */
+		/* Card sizing */
+		/* Colors */
+		/* Calculations */
+		/* Placeholders */
+ 	@media (min-width: 1000px) {
+	 #timeline .demo-card:nth-child(odd) .head::after, #timeline .demo-card:nth-child(even) .head::after {
+		 position: absolute;
+		 content: "";
+		 width: 0;
+		 height: 0;
+		 border-top: 15px solid transparent;
+		 border-bottom: 15px solid transparent;
+		}
+	 #timeline .demo-card:nth-child(odd) .head::before, #timeline .demo-card:nth-child(even) .head::before {
+		 position: absolute;
+		 content: "";
+		 width: 9px;
+		 height: 9px;
+		 background-color: #bdbdbd;
+		 border-radius: 9px;
+		 box-shadow: 0px 0px 2px 8px #f7f7f7;
+		}
+	}
+	/* Some Cool Stuff */
+	 .demo-card:nth-child(1) {
+		 order: 1;
+	}
+	 .demo-card:nth-child(2) {
+		 order: 4;
+	}
+	 .demo-card:nth-child(3) {
+		 order: 2;
+	}
+	 .demo-card:nth-child(4) {
+		 order: 5;
+	}
+	 .demo-card:nth-child(5) {
+		 order: 3;
+	}
+	 .demo-card:nth-child(6) {
+		 order: 6;
+	}
+	/* Border Box */
+	 * {
+		 box-sizing: border-box;
+	}
+	/* Fonts */
+	 body {
+		 font-family: Righteous;
+	}
+
+	/* Fonts */
+	 #timeline {
+		 padding: 100px 0;
+		 background: #2196F3;
+		 border-top: 1px solid rgba(191, 191, 191, 0.4);
+		 border-bottom: 1px solid rgba(191, 191, 191, 0.4);
+	}
+	 #timeline p.leader {
+		 text-align: center;
+		 max-width: 90%;
+		 margin: auto;
+		 margin-bottom: 45px;
+	}
+	 #timeline .demo-card-wrapper {
+		 position: relative;
+		 margin: auto;
+	}
+	 @media (min-width: 1000px) {
+		 #timeline .demo-card-wrapper {
+			 display: flex;
+			 flex-flow: column wrap;
+			 width: 1170px;
+			 height: 1650px;
+			 margin: 0 auto;
+		}
+	}
+	 #timeline .demo-card-wrapper::after {
+		 z-index: 1;
+		 content: "";
+		 position: absolute;
+		 top: 0;
+		 bottom: 0;
+		 left: 50%;
+		 border-left: 1px solid rgba(191, 191, 191, 0.4);
+	}
+	 @media (min-width: 1000px) {
+		 #timeline .demo-card-wrapper::after {
+			 border-left: 1px solid #bdbdbd;
+		}
+	}
+	 #timeline .demo-card {
+		 position: relative;
+		 display: block;
+		 margin: 10px auto 80px;
+		 max-width: 94%;
+		 z-index: 2;
+	}
+	 @media (min-width: 480px) {
+		 #timeline .demo-card {
+			 max-width: 60%;
+			 box-shadow: 0px 1px 22px 4px rgba(0, 0, 0, 0.07);
+		}
+	}
+	 @media (min-width: 720px) {
+		 #timeline .demo-card {
+			 max-width: 40%;
+		}
+	}
+	 @media (min-width: 1000px) {
+		 #timeline .demo-card {
+			 max-width: 450px;
+			 height: 400px;
+			 margin: 90px;
+			 margin-top: 45px;
+			 margin-bottom: 45px;
+		}
+		 #timeline .demo-card:nth-child(odd) {
+			 margin-right: 45px;
+		}
+		 #timeline .demo-card:nth-child(odd) .head::after {
+			 border-left-width: 15px;
+			 border-left-style: solid;
+			 left: 100%;
+		}
+		 #timeline .demo-card:nth-child(odd) .head::before {
+			 left: 491.5px;
+		}
+		 #timeline .demo-card:nth-child(even) {
+			 margin-left: 45px;
+		}
+		 #timeline .demo-card:nth-child(even) .head::after {
+			 border-right-width: 15px;
+			 border-right-style: solid;
+			 right: 100%;
+		}
+		 #timeline .demo-card:nth-child(even) .head::before {
+			 right: 489.5px;
+		}
+		 #timeline .demo-card:nth-child(2) {
+			 margin-top: 180px;
+		}
+	}
+	 #timeline .demo-card .head {
+		 position: relative;
+		 display: flex;
+		 align-items: center;
+		 color: #fff;
+		 font-weight: 400;
+	}
+	 #timeline .demo-card .head .number-box {
+		 display: inline;
+		 float: left;
+		 margin: 15px;
+		 padding: 10px;
+		 font-size: 35px;
+		 line-height: 35px;
+		 font-weight: 600;
+		 background: rgba(0, 0, 0, 0.17);
+	}
+	 #timeline .demo-card .head h2 {
+		 text-transform: uppercase;
+		 font-size: 1.3rem;
+		 font-weight: inherit;
+		 letter-spacing: 2px;
+		 margin: 0;
+		 padding-bottom: 6px;
+		 line-height: 1rem;
+	}
+	 @media (min-width: 480px) {
+		 #timeline .demo-card .head h2 {
+			 font-size: 165%;
+			 line-height: 1.2rem;
+		}
+	}
+	 #timeline .demo-card .head h2 span {
+		 display: block;
+		 font-size: 0.6rem;
+		 margin: 0;
+	}
+	 @media (min-width: 480px) {
+		 #timeline .demo-card .head h2 span {
+			 font-size: 0.8rem;
+		}
+	}
+	 #timeline .demo-card .body {
+		 background: #fff;
+		 border: 1px solid rgba(191, 191, 191, 0.4);
+		 border-top: 0;
+		 padding: 15px;
+	}
+	 @media (min-width: 1000px) {
+		 #timeline .demo-card .body {
+			 height: 415px;
+		}
+	}
+	 #timeline .demo-card .body p {
+		 font-size: 14px;
+		 line-height: 18px;
+		 margin-bottom: 15px;
+	}
+	 #timeline .demo-card .body img {
+		 display: block;
+		 width: 100%;
+	}
+	 #timeline .demo-card--step1 {
+		 background-color: #46b8e9;
+	}
+	 #timeline .demo-card--step1 .head::after {
+		 border-color: #46b8e9;
+	}
+	 #timeline .demo-card--step2 {
+		 background-color: #3ee9d1;
+	}
+	 #timeline .demo-card--step2 .head::after {
+		 border-color: #3ee9d1;
+	}
+	 #timeline .demo-card--step3 {
+		 background-color: #ce43eb;
+	}
+	 #timeline .demo-card--step3 .head::after {
+		 border-color: #ce43eb;
+	}
+	 #timeline .demo-card--step4 {
+		 background-color: #4d92eb;
+	}
+	 #timeline .demo-card--step4 .head::after {
+		 border-color: #4d92eb;
+	}
+	 #timeline .demo-card--step5 {
+		 background-color: #46b8e9;
+	}
+	 #timeline .demo-card--step5 .head::after {
+		 border-color: #46b8e9;
+	}
+ 
+/******************************************************************************************************************************/
+
+	/* TOP NAVBAR / BRAND NAME */
+
+	  /* Top NavBar style choices*/
+	  #navbar {
+	    list-style-type: none;
+	    margin: 0px;
+	    padding: 10px;
+	    overflow: hidden;
+	    background-color: #2196F3;
+	    position: -webkit-sticky;
+	    position: sticky;
+	    top: 0;
+	  }
+
+	  /* CSS for the gif's and the alteration of them  (right) */
+	  .logo-image{
+	      width: 225px;
+	      height: 225px;
+	      border-radius: 50%;
+	      overflow: hidden;
+	      margin-top: -6px;
+	      float:right;
+	      padding-right:6.8%;
+	  }
+
+	  /* CSS for the gif's and the alteration of them (left) */
+	  .logo-image1{
+	      width: 225px;
+	      height: 225px;
+	      border-radius: 50%;
+	      overflow: hidden;
+	      margin-top: -6px;
+	      float:left;
+	      padding-right:6.8%;
+	  }
+
+	  /* Text Alignment */
+	  #navbar li a {
+	    display: block;
+	    color: black;
+	    text-align: center;
+	    padding: 10px 100px;
+	    text-decoration: none;
+	  }
+
+	  /* Hover feature */
+	  #navbar li a:hover {
+	    background-color: #fff;
+	  }
+
+	  /* Title Font */
+	  #fonttitle {
+	    font-family: 'Press Start 2P', cursive;
+	    font-size: 25px;
+	  }
+
+	                                                    /* BOTTOM NAVBAR / LINKS */
+
+	  /* Place the navbar at the bottom of the page, and make it stick */
+	  .navbar {
+	    background-color: #fff;
+	    overflow: hidden;
+	    position: fixed;
+	    bottom: 0;
+	    width: 97.5%;
+	  }
+
+	  /* Style for Bottom NavBar */
+	  .navbar a {
+	    float: left;
+	    display: block;
+	    color: #2196F3;
+	    text-align: center;
+	    text-decoration: none;
+	    font-size: 25px;
+	    padding: 18px 117px;
+	    font-family: 'Ropa Sans', sans-serif;
+	  }
+
+	  /* Change the color of links on hover */
+	  .navbar a:hover {
+	    background-color: #2196F3;
+	    color: black;
+	  }
+
+	  /* Add a color to the active/current link */
+	  .navbar a.active {
+	    background-color: #4CAF50;
+	    color: white;
+	  }
+	                                                    /* TEXT */
+	  /* CSS to text */
+	  #text {
+	    text-align:center;
+	    color: #fff;
+	    padding: 10px 40px;
+	    font-size: 20px;
+	    width: 1300px;
+	    font-family: 'Ropa Sans', sans-serif;
+	  }
+
+	  /* CSS to header */
+	  #header {
+	    text-align:center;
+	    font-size: 30px;
+	    color: #2196F3;
+	    background-color: #fff;
+	    padding: 10px 16px;
+	    font-family: 'Righteous', cursive;
+	  }
+	                                                      /* SPACERS/BORDERS */
+	  #spacerblue {
+	    text-align:center;
+	    font-size: 25px;
+	    color: #ffff;
+	    background-color: #2196F3;
+	    padding: 10px 16px
+	  }
+	    #redspacer {
+	    text-align:center;
+	    font-size: 30px;
+	    color: #e31e38;
+	    background-color: #e31e38;
+		padding: 10px 16px
+	  }
+		</style>
+	</head>
+															<!-- HTML --> 
+
+															<!-- SOURCE --> 
+	    <p id="spacerblue" > UTILIZED FROM https://freefrontend.com/css-timelines/ AND THE AUTHOR PAUL BARKER </p> 
+
+	<body>
+	                                                        <!-- (NAVBAR + GIF) X 2 --> 
+	    <ul id="navbar">
+	      <a class="navbar-brand" href="">
+	        <div class="logo-image">
+	              <img src="https://forum.nhl94.com/uploads/monthly_2018_04/vegas_cup_winners.gif.349c01a8f06072708d1473caa6a0a7f0.gif" class="img-fluid">
+	        </div>
+	      </a>
+	      <a class="navbar-brand" href="">
+	        <div class="logo-image1">
+	            <img src="https://forum.nhl94.com/uploads/monthly_2018_04/vegas_cup_winners.gif.349c01a8f06072708d1473caa6a0a7f0.gif" class="img-fluid">
+	        </div>
+	      </a>
+
+	                                                    <!-- SPACERS TO MAKE THE TOP NAVBAR AESTHETICALLY PLEASING --> 
+	    <li ><a id="fonttitle" >  </a> </li> 
+	    <li ><a id="fonttitle" >  </a> </li> 
+	    <li ><a id="fonttitle" >  </a> </li>
+	   
+	                                                    <!-- TITLE OF WEBSITE PLUS WHAT PAGE IT IS --> 
+	    <li ><a id="fonttitle" > H O W - T O - H O C K E Y </a> </li>
+	    <li ><a id="fonttitle" > HISTORY </a> </li>
+	    <p id="spacerblue" >  </p> 
+	    <p id="spacerblue" >  </p> 
+
+		                                                    <!-- Timeline Section 1 --> 
+		<section id=timeline>
+			<div class="demo-card-wrapper">
+				<div class="demo-card demo-card--step1">
+					<div class="head">
+						<div class="number-box">
+							<span>~1800</span>
+						</div>
+						<h2><span class="small">Thomas Chandler Haliburton</span> The Birth</h2>
+					</div>
+					<div class="body">
+						<p>A man who is still North America’s most quoted author, Thomas Chandler Haliburton, born in Windsor in 1796, told of King’s College School boys playing “hurley on the ice” when he was a young student at the school around 1800. This is the earliest reference in English literature of a stick-ball game being played on ice in Canada. Below is a stick that was auctioned that is believed to be used in the 1800's.</p>
+						<iframe width="415" height="220" src="https://www.youtube.com/embed/e1J0VcskfFw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				</div>
+		                                                    <!-- Timeline Section 2 --> 
+				<div class="demo-card demo-card--step2">
+					<div class="head">
+						<div class="number-box">
+							<span>1950-1967</span>
+						</div>
+						<h2><span class="small">The NHL</span> The Original Six Years</h2>
+					</div>
+					<div class="body">
+						<p>This was when the NHL really started taking a turn towards organized hockey. Stability was a good thing in Montreal, Detroit and Toronto.  These three teams missed the playoffs just 5 times over this period and, starting in 1942, won 25 of 26 Stanley Cups.  Stability was more like a jail sentence in Chicago, Boston and New York, where a top two finish was awfully rare (six times). These were the six teams who "started" the game of hockey. Moreover, this was the years where the mask was invented.</p>
+						<iframe width="415" height="220" src="https://www.youtube.com/embed/xuVTd9136NU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				</div>
+		                                                    <!-- Timeline Section 3 --> 
+				<div class="demo-card demo-card--step3">
+					<div class="head">
+						<div class="number-box">
+							<span>1987-2007</span>
+						</div>
+						<h2><span class="small">NHL Expansion</span> Equipment Era</h2>
+					</div>
+					<div class="body">
+						<p>Expansion resumed in the 1990s with the NHL growing from 21 to 30 teams but the scoring trend broke.  For the first time in the history of the NHL, expansion was associated with a contraction in the average number of goals per game. This included many changes to equipment, including skates, sticks and the goaltenders equipment. The NHL was in full force. </p>
+						<iframe width="415" height="220" src="https://www.youtube.com/embed/LxQKe_Kq0Ps" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				</div>
+		                                                    <!-- Timeline Section 4 --> 
+				<div class="demo-card demo-card--step4">
+					<div class="head">
+						<div class="number-box">
+							<span>2008-2019</span>
+						</div>
+						<h2><span class="small">Modern NHL</span> Hockey as we see today</h2>
+					</div>
+					<div class="body">
+						<p>This is how we see hockey today. The rules were finalized throughout this time period along with the changes in equipment to allow for more mobility and range. This comes with the emergence of hockey players such as Connor McDavid and Auston Matthews, two of the best hockey players in todays time period. </p>
+						<iframe width="415" height="220" src="https://www.youtube.com/embed/jRKRu5i4ovU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				</div>
+		                                                    <!-- Timeline Section 5 --> 
+				<div class="demo-card demo-card--step5">
+					<div class="head">
+						<div class="number-box">
+							<span>2020</span>
+						</div>
+						<h2><span class="small">Corona</span> COVID-19</h2>
+					</div>
+					<div class="body">
+						<p>As we can see now, COVID-19 has put a pause to sports like never before. Other than the lockout year, there hasn't been a pause to the season quite like this. We are still not through this, however, a playoff format has been concluded to and will most likely come into play into June or July.</p>
+						<iframe width="415" height="220" src="https://www.youtube.com/embed/-XJeGW8YYio" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+		</section>
+		                                                              <!-- BOTTOM NAVBAR FOR LINKS --> 
+		<div class="navbar">
+		  <a href="file:///Users/kalen.janmohamed/Desktop/Git%20Repo/Y10Design-PythonKJ/Project%203/HomePage.html">Homepage</a>
+		  <a href="file:///Users/kalen.janmohamed/Desktop/Git%20Repo/Y10Design-PythonKJ/Project%203/Infractions.html">Infractions</a>
+		  <a href="file:///Users/kalen.janmohamed/Desktop/Git%20Repo/Y10Design-PythonKJ/Project%203/NHL.html">NHL</a>
+		  <a href="file:///Users/kalen.janmohamed/Desktop/Git%20Repo/Y10Design-PythonKJ/Project%203/HockeyStatsCalculator.html">Hockey Stats Calculator</a>
+		</div>
+	</body>
+</html>

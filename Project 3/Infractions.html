@@ -1,225 +1,259 @@
 <!DOCTYPE html>
 <html>
-<head>
-<link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Ropa+Sans&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
-<style>
-body {font-family:'Lato';}
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ropa+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+    <style>
+                                                              /* CSS */
 
-/* Place the navbar at the bottom of the page, and make it stick */
-.navbar {
-  background-color: #fff;
-  overflow: hidden;
-  position: fixed;
-  bottom: 0;
-  width: 97.5%;
-}
 
-/* Style the links inside the navigation bar */
-.navbar a {
-  float: left;
-  display: block;
-  color: #2196F3;
-  text-align: center;
-  text-decoration: none;
-  font-size: 25px;
-  padding: 18px 121px;
-  font-family: 'Ropa Sans', sans-serif;
-}
+                                                        /* TOP NAVBAR / BRAND NAME */
 
-/* Change the color of links on hover */
-.navbar a:hover {
-  background-color: #ddd;
-  color: black;
-}
+      /* Top NavBar style choices*/
+      #navbar {
+        list-style-type: none;
+        margin: 0px;
+        padding: 10px;
+        overflow: hidden;
+        background-color: #2196F3;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+      }
 
-/* Add a color to the active/current link */
-.navbar a.active {
-  background-color: #4CAF50;
-  color: white;
-}
+      /* CSS for the gif's and the alteration of them  (right) */
+      .logo-image{
+          width: 225px;
+          height: 225px;
+          border-radius: 50%;
+          overflow: hidden;
+          margin-top: -6px;
+          float:right;
+          padding-right:6.8%;
+      }
 
-#navbar {
-  list-style-type: none;
-  margin: 0px;
-  padding: 10px;
-  overflow: hidden;
-  background-color: #2196F3;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-}
+      /* CSS for the gif's and the alteration of them (left) */
+      .logo-image1{
+          width: 225px;
+          height: 225px;
+          border-radius: 50%;
+          overflow: hidden;
+          margin-top: -6px;
+          float:left;
+          padding-right:6.8%;
+      }
 
-.logo-image{
-    width: 225px;
-    height: 225px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-top: -6px;
-    float:right;
-    padding-right:6.8%;
-}
+      /* Text Alignment */
+      #navbar li a {
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 10px 100px;
+        text-decoration: none;
+      }
 
-.logo-image1{
-    width: 225px;
-    height: 225px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-top: -6px;
-    float:left;
-    padding-right:6.8%;
-}
-#navbar li a {
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 10px 100px;
-  text-decoration: none;
-}
-#navbar li a:hover {
-  background-color: #fff;
-}
+      /* Hover feature */
+      #navbar li a:hover {
+        background-color: #fff;
+      }
 
-#fonttitle {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 25px;
-}
+      /* Title Font */
+      #fonttitle {
+        font-family: 'Press Start 2P', cursive;
+        font-size: 25px;
+      }
 
-#text {
-  text-align:center;
-  color: #fff;
-  padding: 10px 40px;
-  font-size: 20px;
-  width: 1300px;
-  font-family: 'Ropa Sans', sans-serif;
-}
-#spacerblue {
-  text-align:center;
-  font-size: 25px;
-  color: #ffff;
-  background-color: #2196F3;
-  padding: 10px 16px
-}
-  #redspacer {
-  text-align:center;
-  font-size: 30px;
-  color: #e31e38;
-  background-color: #e31e38;
-  padding: 10px 16px
-}
-  #header {
-  text-align:center;
-  font-size: 30px;
-  color: #2196F3;
-  background-color: #fff;
-  padding: 10px 16px;
-  font-family: 'Righteous', cursive;
-}
+                                                        /* BOTTOM NAVBAR / LINKS */
 
-</style>
-</head>
+      /* Place the navbar at the bottom of the page, and make it stick */
+      .navbar {
+        background-color: #fff;
+        overflow: hidden;
+        position: fixed;
+        bottom: 0;
+        width: 97.5%;
+      }
+
+      /* Style for Bottom NavBar */
+      .navbar a {
+        float: left;
+        display: block;
+        color: #2196F3;
+        text-align: center;
+        text-decoration: none;
+        font-size: 25px;
+        padding: 18px 121px;
+        font-family: 'Ropa Sans', sans-serif;
+      }
+
+      /* Change the color of links on hover */
+      .navbar a:hover {
+        background-color: #2196F3;
+        color: black;
+      }
+
+      /* Add a color to the active/current link */
+      .navbar a.active {
+        background-color: #4CAF50;
+        color: white;
+      }
+                                                        /* TEXT */
+      /* CSS to text */
+      #text {
+        text-align:center;
+        color: #fff;
+        padding: 10px 40px;
+        font-size: 20px;
+        width: 1300px;
+        font-family: 'Ropa Sans', sans-serif;
+      }
+
+      /* CSS to header */
+      #header {
+        text-align:center;
+        font-size: 30px;
+        color: #2196F3;
+        background-color: #fff;
+        padding: 10px 16px;
+        font-family: 'Righteous', cursive;
+      }
+                                                          /* SPACERS/BORDERS */
+      #spacerblue {
+        text-align:center;
+        font-size: 25px;
+        color: #ffff;
+        background-color: #2196F3;
+        padding: 10px 16px
+      }
+        #redspacer {
+        text-align:center;
+        font-size: 30px;
+        color: #e31e38;
+        background-color: #e31e38;
+        padding: 10px 16px
+      }
+    </style>
+  </head>
 <body>
+<!-- HTML --> 
 
-<ul id="navbar">
 
-<a class="navbar-brand" href="">
-      <div class="logo-image">
+  <body>
+                                                        <!-- (NAVBAR + GIF) X 2 --> 
+    <ul id="navbar">
+      <a class="navbar-brand" href="">
+        <div class="logo-image">
+              <img src="https://forum.nhl94.com/uploads/monthly_2018_04/vegas_cup_winners.gif.349c01a8f06072708d1473caa6a0a7f0.gif" class="img-fluid">
+        </div>
+      </a>
+      <a class="navbar-brand" href="">
+        <div class="logo-image1">
             <img src="https://forum.nhl94.com/uploads/monthly_2018_04/vegas_cup_winners.gif.349c01a8f06072708d1473caa6a0a7f0.gif" class="img-fluid">
-      </div>
-</a>
- <a class="navbar-brand" href="">
-      <div class="logo-image1">
-            <img src="https://forum.nhl94.com/uploads/monthly_2018_04/vegas_cup_winners.gif.349c01a8f06072708d1473caa6a0a7f0.gif" class="img-fluid">
-      </div>
-</a>
+        </div>
+      </a>
 
- <li ><a id="fonttitle" >  </a> </li> 
- <li ><a id="fonttitle" >  </a> </li> 
- <li ><a id="fonttitle" >  </a> </li>
- 
- <li ><a id="fonttitle" > H O W - T O - H O C K E Y </a> </li>
- <li ><a id="fonttitle" > INFRACTIONS </a> </li>
-<p id="spacerblue" >  </p> 
-<p id="spacerblue" >  </p> 
-<p id="redspacer" > HI </p>  
+                                                          <!-- SPACERS TO MAKE THE TOP NAVBAR AESTHETICALLY PLEASING --> 
+    <li ><a id="fonttitle" >  </a> </li> 
+    <li ><a id="fonttitle" >  </a> </li> 
+    <li ><a id="fonttitle" >  </a> </li>
+   
+                                                        <!-- TITLE OF WEBSITE PLUS WHAT PAGE IT IS --> 
+    <li ><a id="fonttitle" > H O W - T O - H O C K E Y </a> </li>
+    <li ><a id="fonttitle" > INFRACTIONS </a> </li>
+    <p id="spacerblue" >  </p> 
+    <p id="spacerblue" >  </p> 
 
-<center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Wq8zx_bIe2o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</center>
+                                                          <!-- BREAK BETWEEN SECTIONS --> 
+    <p id="redspacer" > HI </p>  
 
-<p id="redspacer" > HI </p>  
+                                                          <!-- SECTION 1: YOUTUBE EMBED --> 
+    <center>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Wq8zx_bIe2o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </center>
 
-<p id="header" > WHAT DOES AN INFRACTION MEAN? </p>
+                                                              <!-- BREAK BETWEEN SECTIONS --> 
+    <p id="redspacer" > HI </p>  
 
-<p id="text" > A penalty in ice hockey is a punishment for an infringement of the rules. Most penalties are enforced by sending the offending player to a penalty box for a set number of minutes. During the penalty the player may not participate in play. Penalties are called and enforced by the referee, or in some cases, the linesman. The offending team may not replace the player on the ice (although there are some exceptions, such as fighting), leaving them short-handed as opposed to full strength. When the opposing team is said to be on a power play, they will have one more player on the ice than the short-handed team. The short-handed team is said to be "on the penalty kill" until the penalty expires and the penalized player returns to play. While standards vary somewhat between leagues, most leagues recognize several common varieties of penalties, as well as common infractions.</p> 
+                                                              <!-- SECTION 2: WHAT IS AN INFRACTION --> 
+    <p id="header" > WHAT DOES AN INFRACTION MEAN? </p>
 
-<p id="redspacer" > HI </p> 
+    <p id="text" > A penalty in ice hockey is a punishment for an infringement of the rules. Most penalties are enforced by sending the offending player to a penalty box for a set number of minutes. During the penalty the player may not participate in play. Penalties are called and enforced by the referee, or in some cases, the linesman. The offending team may not replace the player on the ice (although there are some exceptions, such as fighting), leaving them short-handed as opposed to full strength. When the opposing team is said to be on a power play, they will have one more player on the ice than the short-handed team. The short-handed team is said to be "on the penalty kill" until the penalty expires and the penalized player returns to play. While standards vary somewhat between leagues, most leagues recognize several common varieties of penalties, as well as common infractions.</p> 
 
-<p id="header" > MINOR PENALTY </p>
+                                                              <!-- BREAK BETWEEN SECTIONS --> 
+    <p id="redspacer" > HI </p> 
+                                                             
+                                                              <!-- SECTION 3: MINOR PENALTY + COMMON --> 
+    <p id="header" > MINOR PENALTY </p>
 
-<p id="text" > A minor penalty is the least severe type of infraction. It results in the loss of a player for two-minutes, during which time the player must leave the ice and sit in a penalty box. During a minor hockey penalty, the other team has the advantage with an extra player on the ice. If the other team scores before the penalty is over, the player is released from the penalty box early. In some cases, an official may decide a minor penalty is worth more than two minutes, but is still not severe enough to warrant a major penalty. This will often be the case if a player was injured as a result of the penalty – in these cases a double-minor, or four-minute penalty can be issued.</p>
+    <p id="text" > A minor penalty is the least severe type of infraction. It results in the loss of a player for two-minutes, during which time the player must leave the ice and sit in a penalty box. During a minor hockey penalty, the other team has the advantage with an extra player on the ice. If the other team scores before the penalty is over, the player is released from the penalty box early. In some cases, an official may decide a minor penalty is worth more than two minutes, but is still not severe enough to warrant a major penalty. This will often be the case if a player was injured as a result of the penalty – in these cases a double-minor, or four-minute penalty can be issued.</p>
 
-<p id="header" > MOST COMMON MINOR PENALTIES </p>
+    <p id="header" > MOST COMMON MINOR PENALTIES </p>
 
-<p id="text" > 
-Boarding - any illegal action that causes a player to be thrown into the boards<br>
-Charging - called when a player takes several strides to speed up when checking an opponent<br>
-Contact to the Head - when any part of a players body or the materials being used hits the head forcefully<br>
-Cross-Checking - when a player has both hands on the stick and uses it to deliver a check when no part of the stick is on the ice<br>
-Delay of Game - The act of putting the puck over the boards in your own end or the goalie playing the puck in the restricted zone<br>
-Elbowing - the forceful use of the elbow to foul an opponent<br>
-Slashing - swinging a stick in a forceful motion and hitting another player<br>
-Roughing - any contact that’s unnecessary such as pushing and shoving or aggressive contact after a whistle<br>
-Obstruction - An attacking player who no longer has possession and control of the puck initiates contact with the defending player in an effort to obstruct their ability to play<br>
-High-Sticking - contact with another player with a raised stick<br>
-Kneeing - The use of the knee to hurt another player<br>
-Holding - holding or grabbing a player to restrict their ability to play<br>
-Holding the Stick - holding or grabbing a player's stick to restrict their ability to play<br>
-Interference - the use of contact to stop or slow down a player who’s not in possession of the puck<br>
-Hooking - the use of the stick to slow another player down<br>
-Unsportsmanlike Conduct - When a player challenges or disputes the rulings of any official, taunts or incites an opponent,creates a disturbance during the game,shoots the puck after the whistle<br>
-Tripping - the use of a stick or leg to trip an opponent<br>
-</p>
+    <p id="text" > 
+    Boarding - any illegal action that causes a player to be thrown into the boards<br>
+    Charging - called when a player takes several strides to speed up when checking an opponent<br>
+    Contact to the Head - when any part of a players body or the materials being used hits the head forcefully<br>
+    Cross-Checking - when a player has both hands on the stick and uses it to deliver a check when no part of the stick is on the ice<br>
+    Delay of Game - The act of putting the puck over the boards in your own end or the goalie playing the puck in the restricted zone<br>
+    Elbowing - the forceful use of the elbow to foul an opponent<br>
+    Slashing - swinging a stick in a forceful motion and hitting another player<br>
+    Roughing - any contact that’s unnecessary such as pushing and shoving or aggressive contact after a whistle<br>
+    Obstruction - An attacking player who no longer has possession and control of the puck initiates contact with the defending player in an effort to obstruct their ability to play<br>
+    High-Sticking - contact with another player with a raised stick<br>
+    Kneeing - The use of the knee to hurt another player<br>
+    Holding - holding or grabbing a player to restrict their ability to play<br>
+    Holding the Stick - holding or grabbing a player's stick to restrict their ability to play<br>
+    Interference - the use of contact to stop or slow down a player who’s not in possession of the puck<br>
+    Hooking - the use of the stick to slow another player down<br>
+    Unsportsmanlike Conduct - When a player challenges or disputes the rulings of any official, taunts or incites an opponent,creates a disturbance during the game,shoots the puck after the whistle<br>
+    Tripping - the use of a stick or leg to trip an opponent<br>
+    </p>
 
-<p id="redspacer" > HI </p>
+                                                              <!-- BREAK BETWEEN SECTIONS --> 
+    <p id="redspacer" > HI </p>
 
-<p id="header" > MAJOR PENALTY </p>
+                                                              <!-- SECTION 4: MAJOR PENALTY + COMMON --> 
 
-<p id="text" > A major penalty is a severe infraction that warrants a stiffer five-minute penalty. During major ice hockey penalties, the offending player must sit in the penalty box the entire five minutes, no matter how many times the opposing team scores.</p>
+    <p id="header" > MAJOR PENALTY </p>
 
-<p id="header" > MOST COMMON MAJOR PENALTIES </p>
+    <p id="text" > A major penalty is a severe infraction that warrants a stiffer five-minute penalty. During major ice hockey penalties, the offending player must sit in the penalty box the entire five minutes, no matter how many times the opposing team scores.</p>
 
-<p id="text" > 
-Boarding - any illegal action that causes a player to be thrown into the boards (major) <br>
-Cross-Checking - when a player has both hands on the stick and uses it to deliver a check when no part of the stick is on the ice (major) <br>
-Elbowing - the forceful use of the elbow to foul an opponent (major)<br>
-Slashing - swinging a stick in a forceful motion and hitting another player (major)<br>
-Butt-Ending - The use of the end of the stick to deliberately hurt someone<br>
-Checking from Behind - When a players back is turned towards an opponent and a hit is made, causing for them to fall into the boards face first<br>
-Fighting - The act of one opponent physically fighting another<br>
-</p></p>
+    <p id="header" > MOST COMMON MAJOR PENALTIES </p>
 
-<p id="redspacer" > HI </p>
+    <p id="text" > 
+    Boarding - any illegal action that causes a player to be thrown into the boards (major) <br>
+    Cross-Checking - when a player has both hands on the stick and uses it to deliver a check when no part of the stick is on the ice (major) <br>
+    Elbowing - the forceful use of the elbow to foul an opponent (major)<br>
+    Slashing - swinging a stick in a forceful motion and hitting another player (major)<br>
+    Butt-Ending - The use of the end of the stick to deliberately hurt someone<br>
+    Checking from Behind - When a players back is turned towards an opponent and a hit is made, causing for them to fall into the boards face first<br>
+    Fighting - The act of one opponent physically fighting another<br>
+    </p></p>
 
-<p id="header" > MISCONDUCT PENALTY </p>
+                                                              <!-- BREAK BETWEEN SECTIONS --> 
+    <p id="redspacer" > HI </p>
 
-<p id="text" > A misconduct penalty results in a player being forced to sit in the penalty box for 10 minutes. These are penalties that are more severe than a major penalty, but still don’t warrant an ejection from the game. When a misconduct penalty occurs, the offending player must sit in the box for 10 minutes while one of his or her teammates serves the appropriate number of minutes for the initial infraction. Depending on league rules, the 10-minute timer on the misconduct penalty might not start until the two, four or five-minute penalty for the initial infraction has expired and the second player is released from the box. </p>
+                                                              <!-- SECTION 5: MISCONDUCT PENALTY --> 
+    <p id="header" > MISCONDUCT PENALTY </p>
 
-<p id="redspacer" > HI </p>
+    <p id="text" > A misconduct penalty results in a player being forced to sit in the penalty box for 10 minutes. These are penalties that are more severe than a major penalty, but still don’t warrant an ejection from the game. When a misconduct penalty occurs, the offending player must sit in the box for 10 minutes while one of his or her teammates serves the appropriate number of minutes for the initial infraction. Depending on league rules, the 10-minute timer on the misconduct penalty might not start until the two, four or five-minute penalty for the initial infraction has expired and the second player is released from the box. </p>
 
-<p id="header" > MATCH PENALTY </p>
+                                                              <!-- BREAK BETWEEN SECTIONS --> 
+    <p id="redspacer" > HI </p>
 
-<p id="text" > A match penalty is any infraction that results in the ejection of a player from the game. This is one of the stiffest penalties in hockey. The player must leave the ice while one of his or her teammates serves the time given for the penalty. </p>
+                                                              <!-- SECTION 6: MATCH PENALTY --> 
+    <p id="header" > MATCH PENALTY </p>
 
-<p id="text" > </p>
-<div class="navbar">
-  <a href="file:///Users/kalen.janmohamed/Desktop/Git%20Repo/Y10Design-PythonKJ/Project%203/HomePage.html">Homepage</a>
-  <a href="file:///Users/kalen.janmohamed/Desktop/Git%20Repo/Y10Design-PythonKJ/Project%203/History.html">History</a>
-  <a href="file:///Users/kalen.janmohamed/Desktop/Git%20Repo/Y10Design-PythonKJ/Project%203/NHL.html">NHL</a>
-  <a href="file:///Users/kalen.janmohamed/Desktop/Git%20Repo/Y10Design-PythonKJ/Project%203/HockeyStatsCalculator.html">Hockey Stats Calculator</a>
-</div>
+    <p id="text" > A match penalty is any infraction that results in the ejection of a player from the game. This is one of the stiffest penalties in hockey. The player must leave the ice while one of his or her teammates serves the time given for the penalty. </p>
 
-</body>
+                                                              <!-- BOTTOM NAVBAR FOR LINKS --> 
+    <p id="text" > </p>
+    <div class="navbar">
+      <a href="file:///Users/kalen.janmohamed/Desktop/Git%20Repo/Y10Design-PythonKJ/Project%203/HomePage.html">Homepage</a>
+      <a href="file:///Users/kalen.janmohamed/Desktop/Git%20Repo/Y10Design-PythonKJ/Project%203/History.html">History</a>
+      <a href="file:///Users/kalen.janmohamed/Desktop/Git%20Repo/Y10Design-PythonKJ/Project%203/NHL.html">NHL</a>
+      <a href="file:///Users/kalen.janmohamed/Desktop/Git%20Repo/Y10Design-PythonKJ/Project%203/HockeyStatsCalculator.html">Hockey Stats Calculator</a>
+    </div>
+  </body>
 </html>
-
